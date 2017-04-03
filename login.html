@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>登录</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/slide-unlock.css" />
+		<style>
+			body {
+				background-color: #1a7b4e;
+				color: #fff;
+				margin-bottom: 30px;
+			}
+			
+			#logo_img {
+				width: 100%;
+			}
+			
+			.info {
+				margin: 0 20px 20px;
+				border-bottom: 1px solid #1a569d;
+			}
+			
+			.info_title {
+				width: 5em;
+				background-color: #1a569d;
+				padding: 0.3em 0.5em;
+				color: #fff;
+				float: left;
+			}
+			
+			.info_title_right {
+				display: inline-block;
+				width: 0;
+				height: 0;
+				border-color: #1a569d transparent;
+				float: left;
+				border-width: 1em 1em 1em 0px;
+				border-style: solid;
+			}
+			
+			.info_btn {
+				text-align: right;
+			}
+			
+			.info_btn span {
+				background-color: #1a569d;
+				padding: .3em .5em;
+				border-radius: 5px;
+			}
+			.info_btn a{color: #fff;}
+			
+			.registers {
+				border-bottom: 0;
+			}
+			
+			.info_content{
+				line-height: 2;
+			}
+			
+			.form_style {
+				margin: 1em 0;
+			}
+			
+			.form_style label{
+				color: red;
+			}
+			
+			.form_style input {
+				padding: 10px 35px;
+				width: 100%;
+				border: 0;
+				color: #000;
+			}
+			
+			#phone {
+				background: url(images/phone.png) no-repeat 0.5em;
+				background-size: 1.3em;
+				background-color: #fff;
+			}
+			
+			#password {
+				background: url(images/password.png) no-repeat 0.5em;
+				background-size: 1.3em;
+				background-color: #fff;
+			}
+			
+			.registers {
+				margin: 0 40px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<img src="images/logo.jpg" id="logo_img" />
+		<div class="info">
+			<p class="info_title">活动介绍
+				<div class="info_title_right"></div>
+			</p>
+			<div class="clearfix"></div>
+			<p class="info_content">"中国竞彩" 将于2017年4月17日至2017年5月14日期间开展 "猜比赛 抽红包 争做达人 赢大奖",4周足球单固任意选,万元奖券任性抽,不要犹豫,一起来站!</p>
+
+			<p class="info_btn">
+				<span><a href="active_rule.html">活动规则</a></span>
+				<span style="margin-left: 10px;"><a href="trophy.html">奖品设置</a></span>
+			</p>
+		</div>
+		<div class="registers info">
+			<form id="defaultForm">
+				<div class="form_style">
+					<input type="text" name="phone" id="phone"  placeholder="请输入手机号码">
+				</div>
+				<div class="form_style">
+					<input type="password" name="password" id="password" placeholder="请输入登录密码">
+				</div>
+				<div id="">
+					<p class="pull-left" style="line-height: 48px;">验证：</p>
+					<div id="slider" class="pull-left">
+						<div id="slider_bg"></div>
+						<span id="label">>></span>
+						<span id="labelTip">拖动滑块验证</span>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="radio">
+				  <label>
+				    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" checked="checked">
+				    	我已阅读并同意活动规则和相关条款
+				  </label>
+				</div>
+				<div style="text-align: center;">
+					<button class="btn btn-default center" style="background: #ffcb57;">登录并挑战</button>
+				</div>
+				
+			</form>
+		</div>
+
+		<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<!-- 滑动解锁 -->
+		<script src="js/jquery.slideunlock.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.validate.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/messages_zh.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/form.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				var slider = new SliderUnlock("#slider", {
+					successLabelTip: "验证成功"
+				}, function() {
+					alert("验证成功");
+					
+				});
+				slider.init();
+			});
+		</script>
+	</body>
+
+</html>

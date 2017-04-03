@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>抽奖记录</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<style>
+			body {
+				background-color: #1a7b4e;
+				color: #fff;
+				margin-bottom: 30px;
+			}
+			
+			.none{display: none;}
+			
+			#logo_img {
+				width: 100%;
+			}
+			
+			.info {
+				margin: 0 20px 20px;
+			}
+			
+			.info_content {
+			}
+			
+			.info_title {
+				width: 7em;
+				background-color: #1a569d;
+				padding: 0.3em 0.5em;
+				color: #fff;
+				float: left;
+			}
+			
+			.info_title_right {
+				display: inline-block;
+				width: 0;
+				height: 0;
+				border-color: #1a569d transparent;
+				float: left;
+				border-width: 1em 1em 1em 0px;
+				border-style: solid;
+			}
+			
+			.info_btn span {
+				background-color: #1a569d;
+				padding: .3em .5em;
+				border-radius: 5px;
+			}
+			
+			
+			.info_content{
+				line-height: 2;
+			}
+			
+			.table tbody tr{border-bottom: 0.5px solid #1a569d;box-shadow: 0px 1px 0px 0px #fff;}
+			.table tbody tr td{border-top: 0;}
+			.table th,td{text-align: center;}
+			.table th{background-color: #2982ae;border: 0 !important;}
+			
+			.flow{
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+			#flow_main{
+				background-color: #1a569d;
+				width: 60%;
+				text-align: center;
+				padding: 20px;
+			}
+			#flow_main img{
+				width: 90%;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<img src="images/logo.jpg" id="logo_img" />
+		<div class="info">
+			<p class="info_title">您的抽奖记录
+				<div class="info_title_right"></div>
+			</p>
+			<div class="clearfix"></div>
+			<table class="table">
+				<thead>
+					<th>时间</th>
+					<th>奖品</th>
+					<th>详情</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td>2017-05-01</td>
+						<td>
+							代金劵50元
+						</td>
+						<td>
+							121548745643489
+							<button class="btn erweima" style="background: #1a569d;padding: 2px 5px;">二维码</button>
+						</td>
+					</tr>
+					<tr>
+						<td>2017-05-01</td>
+						<td>
+							未中奖
+						</td>
+						<td>
+							— —
+						</td>
+					</tr>
+					<tr>
+						<td>2017-05-01</td>
+						<td>
+							代金劵50元
+						</td>
+						<td>
+							121548745643489
+							<button class="btn erweima" style="background: #1a569d;padding: 2px 5px;">二维码</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		<!-- Modal弹出模版 -->
+        <div class="flow none">
+			<div id="flow_main">
+				<p class="info_content">
+					扫描进行兑换
+				</p>
+				<div id="erweima">
+					<img src="images/erweima.png" alt="中国竞彩订阅号">
+				</div>
+			</div>
+		</div>
+		
+
+		<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				$(document).on("click",".erweima",function(e){
+					e.stopPropagation();
+					var winheight = $(window).height();
+					var divheight = $("#flow_main").height();
+					var divtop = (winheight/2) - 103;
+					console.log(winheight+ "  "+ divheight + "  " +divtop)
+					$("#flow_main").css("margin",divtop+"px auto");
+					$(".flow").show();
+				});
+				$(document).on("click",".flow",function(e){
+					e.stopPropagation();
+				});
+				$("body").click(function(){
+					$(".flow").hide();
+				})
+			});
+		</script>
+	</body>
+
+</html>
