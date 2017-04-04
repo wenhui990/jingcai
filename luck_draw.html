@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>抽奖页面</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="css/public/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/public/font-awesome.css"/>
+		<link rel="stylesheet" type="text/css" href="css/public/function.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<script src="js/jquery1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/model/jquery.SuperSlide.2.1.1.source.js"></script>
+<script type="text/javascript" src="js/model/html5.js"></script>
+<script type="text/javascript" src="js/public.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+		<style>
+			body {
+				background-color: #1a7b4e;
+				color: #fff;
+				margin-bottom: 30px;
+			}
+			
+			#logo_img {
+				width: 100%;
+			}
+			
+			.info1 {
+				margin: 30px 20px;
+				text-align: center;
+				color: #fff;
+			}
+			.info1 a{
+				color: #fff;
+			}
+			
+			.info_btn span {
+				margin: 5px 10px;
+				background-color: #1a569d;
+				padding: .6em 1em;
+				border-radius: 5px;
+			}
+			
+			.info_content{
+				line-height: 2;
+			}
+			
+		</style>
+	</head>
+
+	<body class="g-body-in">
+		<img src="images/logo.jpg" id="logo_img" />
+		<div class="g-wrap">
+			<section class="main-sec">
+				<div class="g-num">您的抽奖机会：<em>0</em></div>
+			</section>
+			
+			<section class="h15"></section>
+			<section class="main-sec pt5 main-wheel">
+				<!--<div class="bigs-border">-->
+					<div class="big-border">
+						<div class="small-border g6">
+			
+							<div class="shan">
+								<span>6元劵</span>
+								<img src="images/monery.png" width="30%">
+							</div>
+			
+							<div class="shan">
+								<span>8元劵</span>
+								<img src="images/monery.png" width="30%">
+							</div>
+			
+							<div class="shan">
+								<span>9元劵</span>
+								<img src="images/monery.png" width="30%">
+							</div>
+			
+							<div class="shan">
+								<span>19元劵</span>
+								<img src="images/monery.png" width="30%">
+							</div>
+							
+							<div class="shan">
+								<span>39元劵</span>
+								<img src="images/monery.png" width="30%">
+							</div>
+			
+							<div class="shan">
+								<span>59元劵</span>
+								<img src="images/monery.png" width="30%">
+							</div>
+			
+							<img src="images/middle1.png" width="50%" class="middle">
+						</div>
+					</div>
+				<!--</div>-->	
+			</section>
+			
+			<section class="info1">
+				<p class="info_btn">
+				<span style="margin-left: 10px;"><a href="trophy.html">抽奖记录</a></span>
+				<span style=""><a href="active_rule.html">活动规则</a></span>
+			</p>
+			</section>
+		
+			<section class="main-sec loptop">
+				<dl class="peolist">
+					<dd>
+						<span>恭喜<i>abc***</i>获得39元代金券</span>
+					</dd>
+		
+					<dd>
+						<span>恭喜<i>abc***</i>获得89元代金券</span>
+					</dd>
+					
+					<dd>
+						<span>恭喜<i>abc***</i>获得19元代金券</span>
+					</dd>
+				</dl>
+		
+			</section>
+		
+			<script type="text/javascript">
+				jQuery(".loptop").slide( {mainCell:"dl",autoPage:true,effect:'topLoop',autoPlay:true,scroll:1,vis:1,easing:'swing',delayTime:500, interTime:3000, pnLoop:true});
+		
+			</script>
+		
+		</div>
+		
+		<div class="dialog gz">
+			<div class="d-main">
+				<p>请进入"中国竞彩"公众号立即参与</p>
+				<div class="btn-w">
+					<a class="btn" href="lead_pages.html">进入</a>
+					<a class="btn false" href="javascript:void(0);">取消</a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="dialog info">
+			<div class="d-main">
+				<p>抽奖次数已用光</p>
+			</div>
+		</div>
+		
+		
+		<div class="dialog theForm">
+			<div class="d-main">
+				<p>恭喜你,抽奖成功,获得了8元现金,请注意查收</p>
+				<div class="btn-w">
+					<a class="btn btn-lang close" href="javascript:;">确定</a>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="dialog again">
+			<div class="d-main">
+				<p>再来一次</p>
+				<div class="btn-w">
+					<a class="btn close" href="javascript:;">再来一次</a>
+					<a class="btn false" href="javascript:;">取消</a>
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+		var valueJson = {
+			'wheelBody' : $('.big-border'), //转盘主体
+			'wheelSmall' : $('.small-border'), //转盘内部
+			'starsNum' : 16, //转盘边缘小黄点个数
+		
+			'starsPostion' : [[50, 0.5], [70, 6], [84.5, 18], [92.5, 32], [95.5, 50], [91, 68], [81.5, 81.5], [68, 91], [50, 95.5], [32, 92.5], [16, 83], [6, 70], [0.5, 50], [3.5, 32], [14, 15], [27, 5.5]], //小圆点坐标
+			'actionRan' : 7200, //转盘转动弧度
+			'theOnce' : 0, //初始化转盘第一个
+			'startBtn' : $('.middle'), //开始按钮
+		
+			//需要后台传值的参数
+			'clickAjaxUrl' : 'www.baidu.com', //点击抽奖获取信息的交互的ajax
+			'is_gz' : 1, //是否开启关注 1开 2 关
+			'is_follow' : 2 //是否关注
+		
+		};
+		indexApp.init(valueJson).wheelStart(); //应用开始
+		</script>
+		
+		
+	</body>
+
+</html>
