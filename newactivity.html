@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=1080, user-scalable=no">
+		<link href="css/css.css" type="text/css" rel="stylesheet" />
+		<meta name="apple-touch-fullscreen" content="yes" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<title>登录</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/slide-unlock.css" />
+		<style>
+			body {
+				background-color: #1a7b4e;
+				color: #fff;
+				margin-bottom: 30px;
+				padding: 0 10px;
+				font-size: 30px;
+			}
+			
+			#logo_img {
+				width: 100%;
+			}
+			
+			.info {
+				margin: 0 20px 20px;
+				border-bottom: 1px solid #1a569d;
+				font-size: 30px;
+			}
+			
+			.info_title {
+				width: 5em;
+				background-color: #1a569d;
+				padding: 0.3em 0.5em;
+				color: #fff;
+				float: left;
+			}
+			
+			.info_title_right {
+				display: inline-block;
+				width: 0;
+				height: 0;
+				border-color: #1a569d transparent;
+				float: left;
+				border-width: 1em 1em 1em 0px;
+				border-style: solid;
+			}
+			
+			.info_btn {
+				text-align: right;
+			}
+			
+			.info_btn span {
+				background-color: #1a569d;
+				padding: .3em .5em;
+				border-radius: 5px;
+			}
+			
+			.info_btn a {
+				color: #fff;
+			}
+			
+			.registers {
+				border-bottom: 0;
+			}
+			
+			.info_content {
+				line-height: 2;
+			}
+			
+			.form_style {
+				margin: 1em 0;
+			}
+			
+			.form_style label {
+				color: red;
+			}
+			
+			.form_style input {
+				padding: 10px 35px;
+				width: 100%;
+				border: 0;
+				color: #000;
+			}
+			
+			#phone {
+				background: url(images/phone.png) no-repeat 0.5em;
+				background-size: 1.3em;
+				background-color: #fff;
+			}
+			/*#password {
+				background: url(images/password.png) no-repeat 0.5em;
+				background-size: 1.3em;
+				background-color: #fff;
+			}*/
+			
+			.registers {
+				margin: 0 40px;
+			}
+			
+			#huakuai {
+				margin-left: 5%;
+				line-height: 99px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<img src="images/hdjs_header.png" class="bg_img" />
+		<div class="all_head heig_01">
+			<div class="srk_all">
+				<div class="info">
+					<p class="info_title">活动介绍
+						<div class="info_title_right"></div>
+					</p>
+					<div class="clearfix"></div>
+					<p class="info_content">"中国竞彩" 将于2017年4月17日至2017年5月14日期间开展 "猜比赛 抽红包 争做达人 赢大奖",4周足球单固任意选,万元奖券任性抽,不要犹豫,一起来站!</p>
+
+					<p class="info_btn">
+						<span><a href="active_rule.html">活动规则</a></span>
+						<span style="margin-left: 10px;"><a href="trophy.html">奖品设置</a></span>
+					</p>
+				</div>
+				<input class="skr01" type="text" id="mobile" onkeyup="this.value=this.value.replace(/\D/g,'');$('#mobileErrMsg').html('');" onafterpaste="this.value=this.value.replace(/\D/g,'')" maxlength="11" size="30" onblur="checkMobile();" placeholder="请输入手机号码" /><br/>
+
+				<input class="skr02" type="password" id="password" size="30" maxlength="18" autocomplete="off" onkeyup="this.value=this.value.replace(/[^\w!;:,._=@#$%^&*()]|_/ig,'');" onfocus="changeInput('password')" onblur="checkUserPwd()" placeholder="请输入登录密码" /><br/>
+
+				<div id="huakuai">
+					<p class="pull-left" style="line-height: 98px;">验证：</p>
+					<div id="slider" class="pull-left">
+						<div id="slider_bg"></div>
+						<span id="label">>></span>
+						<span id="labelTip">拖动滑块验证</span>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+
+				<p style="height:50px">
+					<font id="mobileErrMsg" size="30" style="color:red;margin-left: 5%;"></font>
+				</p>
+			</div>
+			<center class="yue"><input type="radio" id="readgz" checked>
+				<font class="blue_new"> 我已阅读并同意活动规则和相关条款</font>
+			</center>
+			<center>
+				<a href="javascript:void(0)" class="login_in"></a>
+			</center>
+		</div>
+		</div>
+		<script src="js/jquery1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<!-- 滑动解锁 -->
+		<script src="js/jquery.slideunlock.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script type="text/javascript" src="js/wxweb.js"></script>
+		<script type="text/javascript" src="js/wxbox.js"></script>
+		<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<!--<script type="text/javascript" src="../js/adaptor/set.js"></script>-->
+		<script type="text/javascript">
+			var fla = false;
+			var slider = new SliderUnlock("#slider", {
+				successLabelTip: "验证成功"
+			}, function() {
+				alert("验证成功");
+				fla = true;
+				if(fla) {
+					refreshCc();
+					initWx(window.location.href, "lead_pages.html", '猜比赛 抽红包', false);
+					loadGaScript();
+					$(document).on('click', '.login_in', function() {
+						if(!fla) {
+							alert("滑块验证失败！");
+						} else {
+							loginChallenge();
+						}
+					});
+				}
+			});
+			slider.init();
+			$(document).on('click', '.login_in', function() {
+				if(!fla) {
+					alert("滑块验证失败！");
+				} else {
+					loginChallenge();
+				}
+			});
+
+			console.log(fla);
+			var token,openId,captxt,_gat,_ga
+			document.cookie = token="ckaXtovGGRDNPKqNzsZtxkAWE3w=]4533BEFFD53317BEE0437A3C1C8914D40658D63BB61CAEC8A1F8C72C92FF4A1CD9F43E89BD0002E92BD93D0B61F4D264;"+openId+"=oGYn6ji1ZlSn4ayX1GOcj_KHpV7U;"+ captxt+"=FDCC717F358916F24731FCB7E161362C9EF5AF0F84E885B11D61E0C59D0F256F856811C0FF4255ED063AA3EF5DF176E0;"+ _gat+"=1;"+_ga+"=GA1.2.2085903259.1491709875;";
+		</script>
+	</body>
+
+</html>

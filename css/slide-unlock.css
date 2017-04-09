@@ -24,18 +24,18 @@
 }
 
 #label {
-  width: 46px;
+  width: 150px;
   position: absolute;
   left: 4px;
   top: 4px;
-  height: 40px;
-  line-height: 40px;
+  height: 93px;
+  line-height: 93px;
   border: 1px solid #cccccc;
   background: #fff;
   z-index: 3;
   cursor: move;
   color: #999;
-  font-size: 16px;
+  font-size: 30px;
   font-weight: 900;
   box-shadow: -1px 1px 1px 1px #999;
 }
@@ -45,10 +45,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  font-size: 13px;
+  font-size: 30px;
   font-family: 'Microsoft Yahei', serif;
   color: #fff;
-  line-height: 38px;
+  line-height: 93px;
   text-align: center;
   z-index: 2;
   border: 4px solid;

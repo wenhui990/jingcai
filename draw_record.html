@@ -13,7 +13,9 @@
 				margin-bottom: 30px;
 			}
 			
-			.none{display: none;}
+			.none {
+				display: none;
+			}
 			
 			#logo_img {
 				width: 100%;
@@ -23,8 +25,7 @@
 				margin: 0 20px 20px;
 			}
 			
-			.info_content {
-			}
+			.info_content {}
 			
 			.info_title {
 				width: 7em;
@@ -50,33 +51,47 @@
 				border-radius: 5px;
 			}
 			
-			
-			.info_content{
+			.info_content {
 				line-height: 2;
 			}
 			
-			.table tbody tr{border-bottom: 0.5px solid #1a569d;box-shadow: 0px 1px 0px 0px #fff;}
-			.table tbody tr td{border-top: 0;}
-			.table th,td{text-align: center;}
-			.table th{background-color: #2982ae;border: 0 !important;}
+			.table tbody tr {
+				border-bottom: 0.5px solid #1a569d;
+				box-shadow: 0px 1px 0px 0px #fff;
+			}
 			
-			.flow{
+			.table tbody tr td {
+				border-top: 0;
+			}
+			
+			.table th,
+			td {
+				text-align: center;
+			}
+			
+			.table th {
+				background-color: #2982ae;
+				border: 0 !important;
+			}
+			
+			.flow {
 				position: fixed;
 				top: 0;
 				left: 0;
 				width: 100%;
 				height: 100%;
 			}
-			#flow_main{
+			
+			#flow_main {
 				background-color: #1a569d;
 				width: 60%;
 				text-align: center;
 				padding: 20px;
 			}
-			#flow_main img{
+			
+			#flow_main img {
 				width: 90%;
 			}
-			
 		</style>
 	</head>
 
@@ -93,7 +108,7 @@
 					<th>奖品</th>
 					<th>详情</th>
 				</thead>
-				<tbody>
+				<tbody id="res">
 					<tr>
 						<td>2017-05-01</td>
 						<td>
@@ -126,9 +141,9 @@
 				</tbody>
 			</table>
 		</div>
-		
+
 		<!-- Modal弹出模版 -->
-        <div class="flow none">
+		<div class="flow none">
 			<div id="flow_main">
 				<p class="info_content">
 					扫描进行兑换
@@ -138,25 +153,33 @@
 				</div>
 			</div>
 		</div>
-		
 
 		<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/wxbox.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script type="text/javascript" src="js/wxweb.js"></script>
+		<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script type="text/javascript">
+			getCjRecord();
+			initWx(window.location.href, "lead_pages.html", '猜比赛 赢红包', false);
+			loadGaScript();
+		</script>
 		<script type="text/javascript">
 			$(function() {
-				$(document).on("click",".erweima",function(e){
+				$(document).on("click", ".erweima", function(e) {
 					e.stopPropagation();
 					var winheight = $(window).height();
 					var divheight = $("#flow_main").height();
-					var divtop = (winheight/2) - 103;
-					console.log(winheight+ "  "+ divheight + "  " +divtop)
-					$("#flow_main").css("margin",divtop+"px auto");
+					var divtop = (winheight / 2) - 103;
+					console.log(winheight + "  " + divheight + "  " + divtop)
+					$("#flow_main").css("margin", divtop + "px auto");
 					$(".flow").show();
 				});
-				$(document).on("click",".flow",function(e){
+				$(document).on("click", ".flow", function(e) {
 					e.stopPropagation();
 				});
-				$("body").click(function(){
+				$("body").click(function() {
 					$(".flow").hide();
 				})
 			});

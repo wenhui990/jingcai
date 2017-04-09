@@ -2,17 +2,14 @@
 <html>
 
 	<head>
-		<meta charset="UTF-8">
-		<title>注册</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="format-detection" content="telephone=no">
+		<meta name="viewport" content="width=1080, user-scalable=no">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-		<style>
-			body {
-				background-color: #1a7b4e;
-				color: #fff;
-				margin-bottom: 30px;
-			}
-			.none{
+		<link href="css/css.css" type="text/css" rel="stylesheet" />
+		<title>注册</title>
+		<style type="text/css">
+			.none {
 				display: none;
 			}
 			
@@ -23,12 +20,13 @@
 			.info {
 				margin: 0 20px 20px;
 				border-bottom: 1px solid #1a569d;
+				font-size: 30px;
 			}
 			
 			.info_title {
 				color: #fff;
 				text-align: center;
-			    margin: 10px auto;
+				margin: 10px auto;
 				width: 16.5em;
 			}
 			
@@ -41,7 +39,8 @@
 				border-width: 1em 0em 1em 1em;
 				border-style: solid;
 			}
-			.info_title_text{
+			
+			.info_title_text {
 				float: left;
 				padding: 0.3em 0.5em;
 				background-color: #1a569d;
@@ -71,15 +70,16 @@
 				border-bottom: 0;
 			}
 			
-			.info_content{
+			.info_content {
 				line-height: 2;
+				text-align: center;
 			}
 			
 			.form_style {
 				margin: 1em 0;
 			}
 			
-			.form_style label{
+			.form_style label {
 				color: red;
 			}
 			
@@ -87,7 +87,6 @@
 				padding: 10px 30px;
 				width: 100%;
 				color: #000;
-				
 			}
 			
 			#phone {
@@ -96,11 +95,12 @@
 				background-color: #fff;
 			}
 			
-			#password {
+			/*#password {
 				background: url(images/password.png) no-repeat 0.5em;
 				background-size: 1.3em;
 				background-color: #fff;
-			}
+			}*/
+			
 			#repassword {
 				background: url(images/password.png) no-repeat 0.5em;
 				background-size: 1.3em;
@@ -110,25 +110,30 @@
 			.registers {
 				margin: 0 40px;
 			}
-			#phone_code{
+			
+			#phone_code {
 				width: 90%;
-				padding-left:10px ;
+				padding-left: 10px;
 				border: 0;
 			}
-			#phone_code_left{
+			
+			#phone_code_left {
 				float: left;
 				width: 66%;
 			}
-			#phone_code_right{
+			
+			#phone_code_right {
 				float: left;
 				width: 20%;
 				line-height: 40px;
 			}
+			
+			
 		</style>
 	</head>
 
 	<body>
-		<img src="images/logo.jpg" id="logo_img" />
+		<img src="images/hdjs_header.png" class="bg_img" />
 		<div class="info">
 			<div class="info_title">
 				<div class="info_title_left"></div>
@@ -139,62 +144,68 @@
 				<div class="clearfix"></div>
 			</div>
 			<div class="clearfix"></div>
-			
 			<p class="info_content">注册绑定帐号后，中国竞彩不会获得您的微信用户和密码，请放心使用</p>
 
 		</div>
-		<div class="registers info">
-			<form id="defaultForm" role="form" class="form-horizontal">
-				<div class="form_style has-success has-feedback">
-					<input type="text" name="phone" id="phone"  placeholder="请输入手机号码">
-				</div>
-				<div class="form_style" style="background: rgba(0,0,0,0);">
-					<div id="phone_code_left">
-						<input type="text" name="phone_code" id="phone_code" placeholder="请输入验证码">
-					</div>
-					<div id="phone_code_right">
-						<button class="btn phone_code_btn" style="background: #ffcb57;">获取验证码</button>
-						<button class="btn phone_code_btn_num none" style="background: #ffcb57;"><span>60</span>S后可再次发送</button>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-				<div class="form_style">
-					<input type="password" name="password" id="password" placeholder="请输入登录密码">
-				</div>
-				<div class="form_style">
-					<input type="password" name="repassword" id="repassword" placeholder="请确认登录密码">
-				</div>
-				<div class="radio">
-				  <label>
-				    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" checked="checked">
-				    	我已阅读并同意活动规则和相关条款
-				  </label>
-				</div>
-				<div>
-					<p>注意：</p>
-					<p>1.请使用真实手机号作为账户名；</p>
-					<p>2.密码支持6-18个字符，数字、英文字母，区分大小写</p>
-				</div>
-				<div style="text-align: center;">
-					<button class="btn btn-default center" style="background: #ffcb57;color: #fff;padding: 8px 25px;">注册</button>
-				</div>
-				
-			</form>
-		</div>
+		<div class="all_head heig_bet">
 
+			<div class="shan_line"></div>
+			<div class="srk_all">
+				<input type="text" class="skr01" id="mobile" onkeyup="this.value=this.value.replace(/\D/g,'');$('#mobileErrMsg').html('');" onafterpaste="this.value=this.value.replace(/\D/g,'')" onfocus="if(this.value=='请输入手机号码'){this.value='';}" maxlength="11" size="30" onblur="if(this.value==''){this.value='请输入手机号码';};checkMobile();" value="请输入手机号码" />
+				<br/>
+
+				<input type="text" class="skr03" id="mobileCode" onkeyup="this.value=this.value.replace(/\D/g,'');$('#mobileErrMsg').html('');" onafterpaste="this.value=this.value.replace(/\D/g,'')" onfocus="if(this.value=='请输入验证码'){this.value='';}" maxlength="6" size="30" onblur="if(this.value==''){this.value='请输入验证码';};" value="请输入验证码" />
+				<a href="javascript:void(0);" id="smsSend" onclick="sendSms();"><input type="button" value="" class="skr04"></a>
+				<br />
+
+				<span style="display:none;">短信校验码<span id="codeAlive"></span>分钟内有效，<span id="codeWait"></span>秒内未收到校验短信，可重新获取。</span>
+				<!-- <a href="javascript:void(0);" class="fx_but" id="smsSend" onclick="sendSms();" style="margin-top:15px; margin-left:-130px;"> -->
+				<span id="counta" style="display:none;color:gray;"><span id="time">0</span>秒后重发</span>
+				<!-- </a> -->
+				<br />
+
+				<input class="skr02" type="password" id="password" size="30" maxlength="18" autocomplete="off" onkeyup="this.value=this.value.replace(/[^\w!;:,._=@#$%^&*()]|_/ig,'');" onfocus="changeInput('password')" onblur="checkUserPwd();" placeholder="请输入登录密码" />
+				<br />
+				<input class="skr02" type="password" id="rePassword" size="30" maxlength="18" autocomplete="off" onkeyup="this.value=this.value.replace(/[^\w!;:,._=@#$%^&*()]|_/ig,'');" onfocus="changeInput('rePassword')" onblur="checkCfmUserPwd();" placeholder="请确认登录密码" />
+				<br />
+			</div>
+			<p class="align_c" style="height:18px">
+				<font id="mobileErrMsg" style="color: red"></font>
+			</p>
+			<center class="yue col_blu"><input type="radio" id="xieyi" checked="checked">
+				<font class="purple">我已阅读并同意活动规则和相关条款</font>
+			</center>
+			<p class="wid2 f18 col_gray">注意：<br/> 1.请使用真实手机号作为账户名：
+				<br/> 2.密码支持6-18个字符,数字,英文字母,区分大小写
+			</p>
+			<br/>
+			<a href="javascript:void(0);" class="zc_btn" onclick="register();"><img src="images/tz_btn.png" style="width: 100%;"></a>
+		</div>
+		<div id="worn" style="display:none;">
+			<div class="pop_title">
+				<div class="f_l">信息确认</div>
+				<div class="f_r">
+					<a href="javascript:void(0);" onclick="window.location = getPath() + '/htmlwx/newactivity.html?flag=first'"><img src="images/close_icon.png" /></a>
+				</div>
+			</div>
+			<div class="pop_con">
+				<center>
+					<p style="color:#000;" name="message"></p>
+				</center>
+				<center>
+					<a href="javascript:void(0);" class="pop_but" onclick="window.location = getPath() + '/htmlwx/newactivity.html?flag=first'">确 定</a>
+				</center><br/>
+			</div>
+		</div>
 		<script src="js/jquery1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/jquery.validate.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/messages_zh.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/form.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script type="text/javascript" src="js/wxweb.js"></script>
+		<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<!--<script type="text/javascript" src="../js/adaptor/set.js"></script>-->
 		<script type="text/javascript">
-			$(function() {
-				
-				
-				
-				
-				
-			});
+			getCodeData();
+			initWx(window.location.href, "lead_pages.html", '猜比赛 抽红包', false);
+			loadGaScript();
 		</script>
 	</body>
 
