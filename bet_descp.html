@@ -85,7 +85,7 @@
 					success: function(data) {
 						$.each(data.r, function(i, e) {
 							var html = '<tr><td>' + e.status + '</td>' +
-								'<td><img src="../../hd_imgs/result' + e.statuscode + '.png" /></td>' +
+								'<td><img src="../hd_imgs/result' + e.statuscode + '.png" /></td>' +
 								'<td>' + e.d + '<br /> ' + e.vs + '<br /> 投注：' + ((e.letCount != 0) ? '让球（' + e.letCount + '）' : e.betResult) + '</td></tr>';
 							$(".zj_list").append(html);
 						})

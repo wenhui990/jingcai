@@ -112,7 +112,7 @@ function pwdReset(id){
 function integralSearch(){
 	var oid=getCookie("token");
 	if(!oid){
-		window.location = getPath() + "/htmlwx/jc/newactivity.html";
+		window.location = getPath() + "/htmlwx/newactivity.html";
 		return;
 	}
 	$.ajax({
@@ -1327,7 +1327,7 @@ function checkCfmUserPwd (){
 function question(){
 	var oid=getCookie("token");
 	if(!oid){
-		window.location = getPath() + "/htmlwx/jc/newactivity.html";
+		window.location = getPath() + "/htmlwx/newactivity.html";
 		return;
 	}
 	$.ajax({
@@ -1820,7 +1820,7 @@ function luckydraw(){
 function luckydrawCallBack(dt){
 	if(dt){
 		if(!dt["u"]){
-			window.location.href = getPath() + "/htmlwx/jc/newactivity.html";
+			window.location.href = getPath() + "/htmlwx/newactivity.html";
 		}
 		var user = dt["u"][0];//用户的信息,获取抽奖次数
 		var luckyuser = dt["a"];//获奖名单,取前十个
@@ -1919,7 +1919,7 @@ function myChallenge(){
 	var oid=getCookie("token");
 	
 	if(!oid){
-		window.location.href = getPath() + "htmlwx/jc/newactivity.html";
+		window.location.href = getPath() + "htmlwx/newactivity.html";
 		return;
 	}
 	var request, srchString = location.search.substring(1,
@@ -3099,7 +3099,7 @@ function myChallengeCallback1(data){
  	}
  	var dt = data["r"];
    	if(dt.indexOf("请重新登录") > -1){
-   		window.location = getPath() + "/htmlwx/jc/newactivity.html";
+   		window.location = getPath() + "/htmlwx/newactivity.html";
    	}
  	if(dt){
  		for (i = 0; i < dt.length; i++) {
