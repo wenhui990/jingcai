@@ -1,7 +1,7 @@
 //微信JS-SDK初始化
 function initWx(url,shareLink,shareTitle,hideMenu){
 	$.ajax({
-		url : 'http://sp.grsx.cc'+getPath()+'/manage/signature.do?url='+encodeURIComponent(url),
+		url : getPath()+'/manage/signature.do?url='+encodeURIComponent(url),
 		dataType : "json",
 		success : function(data) {
 				if(data){
@@ -37,7 +37,7 @@ function initWx(url,shareLink,shareTitle,hideMenu){
 
 function submitShare(){
 	$.ajax({
-		url : 'http://sp.grsx.cc'+getPath()+'/manage/sharemsg.do',
+		url : getPath()+'/manage/sharemsg.do',
 		dataType : "json",
 		success : function(data) {}
 	});
@@ -95,7 +95,7 @@ function pwdReset(id){
 	}
 	$.ajax({
 		type : "post",
-		url : 'http://sp.grsx.cc'+getPath()+'/web/pwdreset.do',
+		url : getPath()+'/web/pwdreset.do',
 		data: "mobile="+mobile+"&pwd="+password+"&u="+id,
 		dataType : "json",
 		contentType: "application/x-www-form-urlencoded; charset=utf-8",
@@ -112,12 +112,12 @@ function pwdReset(id){
 function integralSearch(){
 	var oid=getCookie("token");
 	if(!oid){
-		window.location = getPath() + "/htmlwx/denglu.html";
+		window.location = getPath() + "/htmlwx/jc/newactivity.html";
 		return;
 	}
 	$.ajax({
 		type : "post",
-		url : 'http://sp.grsx.cc'+getPath()+'/web/searchintegral.do',
+		url : getPath()+'/web/searchintegral.do',
 		dataType : "json",
 		contentType: "application/x-www-form-urlencoded; charset=utf-8",
 		success : function(data) {
@@ -177,7 +177,7 @@ function userInfo(){
 	}
 	$.ajax({
 		type : "post",
-		url : 'http://sp.grsx.cc'+getPath()+'/web/user/get.do',
+		url : getPath()+'/web/user/get.do',
 		dataType : "json",
 		contentType: "application/x-www-form-urlencoded; charset=utf-8",
 		success : function(data) {
@@ -236,7 +236,7 @@ function userInfo(){
 function awardIsssue(startIdx){
 	$.ajax({
 		type : "post",
-		url : 'http://sp.grsx.cc'+getPath()+'/web/awardIsssue.do',
+		url : getPath()+'/web/awardIsssue.do',
 		data : 'startIdx=' + startIdx,
 		dataType : "json",
 		contentType: "application/x-www-form-urlencoded; charset=utf-8",
@@ -257,7 +257,7 @@ function awardList(startIdx){
 	var awardlist = $("#awardlist").find("option:selected").val();
 	$.ajax({
 		type : "post",
-		url : 'http://sp.grsx.cc'+getPath()+'/web/awardList.do',
+		url : getPath()+'/web/awardList.do',
 		data : 'startIdx=' + startIdx+'&awardlist='+awardlist,
 		dataType : "json",
 		contentType: "application/x-www-form-urlencoded; charset=utf-8",
@@ -313,7 +313,7 @@ function awardListcallback(dt){
 function infoDetail(num){
 	$.ajax({
 		type : "post",
-		url : 'http://sp.grsx.cc'+getPath()+'/web/infoDetail.do',
+		url : getPath()+'/web/infoDetail.do',
 		dataType : "json",
 		contentType: "application/x-www-form-urlencoded; charset=utf-8",
 		success : function(data) {
@@ -348,7 +348,7 @@ function changeIssue(){
 function searchIssue(startIdx,type,gameNum,num){
 	$.ajax({
 		type : "post",
-		url : 'http://sp.grsx.cc'+getPath()+'/web/searchMatchaIssue.do',
+		url : getPath()+'/web/searchMatchaIssue.do',
 		data : 'gameNum=' + gameNum + '&startIdx=' + startIdx+ '&type=' + type,
 		dataType : "json",
 		contentType: "application/x-www-form-urlencoded; charset=utf-8",
@@ -369,7 +369,7 @@ function searchWxtradMatch(startIdx,type,gameNum,num){
 	var issue = $("#issue").find("option:selected").val();
 	$.ajax({
 		type : "post",
-		url : 'http://sp.grsx.cc'+getPath()+'/web/searchWxtradMatch.do',
+		url : getPath()+'/web/searchWxtradMatch.do',
 		data : 'matchType=' + type + '&gameNum=' + gameNum+ '&issue=' + issue,
 		dataType : "json",
 		contentType: "application/x-www-form-urlencoded; charset=utf-8",
@@ -663,7 +663,7 @@ function searchWxMatch(startIdx,type){
 	$("div.ss_sm_but").next().find("a").removeClass().addClass("ss_big_but");
 	$.ajax({
 		type : "post",
-		url : 'http://sp.grsx.cc'+getPath()+'/web/searchWxMatch.do',
+		url : getPath()+'/web/searchWxMatch.do',
 		data : 'matchType=' + type + '&startIdx=' + startIdx,
 		dataType : "json",
 		contentType: "application/x-www-form-urlencoded; charset=utf-8",
@@ -1088,7 +1088,7 @@ function showCollect(){
 	}
 	$.ajax({
 		type : "POST",
-		url : 'http://sp.grsx.cc'+getPath() + '/web/updateaddrs.do',
+		url : getPath() + '/web/updateaddrs.do',
 		data : "realName=" + realName + "&detailAddrs=" + detailAddrs
 				+ "&postCode=" + postCode + "&mobile=" + mobile  
 				 + "&province=" + province + "&city=" + city
@@ -1327,12 +1327,12 @@ function checkCfmUserPwd (){
 function question(){
 	var oid=getCookie("token");
 	if(!oid){
-		window.location = getPath() + "/htmlwx/question2login.html";
+		window.location = getPath() + "/htmlwx/jc/newactivity.html";
 		return;
 	}
 	$.ajax({
 		type : "post",
-		url : 'http://sp.grsx.cc'+getPath() + '/web/question.do',
+		url : getPath() + '/web/question.do',
 		dataType : "json",
 		contentType : "application/x-www-form-urlencoded; charset=utf-8",
 		success : function(data) {
@@ -1488,7 +1488,7 @@ function questionBetSubmit(datas){
 	 $.ajax({
 		    async:false,
 			type : "post",
-			url : 'http://sp.grsx.cc'+getPath() + '/web/questionbetsubmit.do',
+			url : getPath() + '/web/questionbetsubmit.do',
 			data : datas,
 			dataType : "json",
 			contentType : "application/x-www-form-urlencoded; charset=utf-8",
@@ -1523,7 +1523,7 @@ function questionBetSubmit(datas){
 function questionAgain(){
 	$.ajax({
 		type : "post",
-		url : 'http://sp.grsx.cc'+getPath() + '/web/question.do',
+		url : getPath() + '/web/question.do',
 		dataType : "json",
 		contentType : "application/x-www-form-urlencoded; charset=utf-8",
 		success : function(data) {
@@ -1567,7 +1567,7 @@ function loginChallenge(flg) {
 	var datas = "mobile=" + mobile + "&password=" + password + "&flg=" + flg +"&checkCode=" + checkCode;
 	$.ajax({
 		type : "post",
-		url : 'http://sp.grsx.cc'+getPath() + '/web/wxlogin.do',
+		url : getPath() + '/web/wxlogin.do',
 		data : datas,
 		dataType : "json",
 		contentType : "application/x-www-form-urlencoded; charset=utf-8",
@@ -1579,37 +1579,37 @@ function loginChallenge(flg) {
 			    if (url.indexOf("?") != -1) {
 			      var strs = url.split("=");
 			      if(strs[1]=="ggk"){
-						window.location = getPath() + "/htmlwx/hd_ggk.html";
+						window.location = getPath() + "/htmlwx/jc/hd_ggk.html";
 						return;
 				  } else if(strs[1] == "ggkzj"){
-					  	window.location = getPath() + "/htmlwx/hd_ggk_zj.html";
+					  	window.location = getPath() + "/htmlwx/jc/hd_ggk_zj.html";
 						return;
 				  } else if(strs[1] == "ggklj"){
-					  	window.location = getPath() + "/htmlwx/perfectInfo.html";
+					  	window.location = getPath() + "/htmlwx/jc/perfectInfo.html";
 						return;
 				  } else if(strs[1] == "raffle"){
-					  	window.location = getPath() + "/htmlwx/hd_raffle.html";
+					  	window.location = getPath() + "/htmlwx/jc/hd_raffle.html";
 						return;
 				  } else if(strs[1] == "raffler"){
-					  	window.location = getPath() + "/htmlwx/hd_raffle_record.html";
+					  	window.location = getPath() + "/htmlwx/jc/hd_raffle_record.html";
 						return;
 				  }
 			    }
 				if(flg!="login"){
 					if(data["s"]==0){//首次激活活动要提示赠送多少积分
 //						window.location = getPath() + "/htmlwx/firstPage.html";
-						window.location = getPath() + "/htmlwx/hd_dati.html";
+						window.location = getPath() + "/htmlwx/jc/hd_dati.html";
 						//showTipsWindown('', 'worn',300,200);
 					}else{
 						if(flg=='question'){//参加问卷调查登陆
 							//window.location = getPath() + "/htmlwx/question.html";
-							window.location = getPath() + "/htmlwx/hd_dati.html";
+							window.location = getPath() + "/htmlwx/jc/hd_dati.html";
 						}else{
-							window.location = getPath() + "/htmlwx/mychallenge.html";
+							window.location = getPath() + "/htmlwx/jc/mychallenge.html";
 						}
 					}
 				}else{
-					window.location = getPath() + "/htmlwx/jifen.html";
+					window.location = getPath() + "/htmlwx/jc/jifen.html";
 				}
 			}else{
 				refreshCc();
@@ -1630,7 +1630,7 @@ function pageshow(){
 function ggk(){
 	$.ajax({
 		type : "post",
-		url : 'http://sp.grsx.cc'+getPath() + '/web/guaguaka.do',
+		url : getPath() + '/web/guaguaka.do',
 		dataType : "json",
 		contentType : "application/x-www-form-urlencoded; charset=utf-8",
 		success : function(data) {
@@ -1707,7 +1707,7 @@ function ggkSubmit(id, point){
 	(function func(id, point){
 		$.ajax({
 			type : "post",
-			url : 'http://sp.grsx.cc'+getPath() + '/web/guaguaka/sumbit.do',
+			url : getPath() + '/web/guaguaka/sumbit.do',
 			data : {
 				id : id
 			},
@@ -1739,7 +1739,7 @@ function ggkSubmit(id, point){
 function ggkRecord(){
 	$.ajax({
 		type : "post",
-		url : 'http://sp.grsx.cc'+getPath() + '/web/guaguaka/record.do',
+		url : getPath() + '/web/guaguaka/record.do',
 		dataType : "json",
 		contentType : "application/x-www-form-urlencoded; charset=utf-8",
 		success : function(data) {
@@ -1809,7 +1809,7 @@ function ggkRecordCallBack(data){
 function luckydraw(){
 	$.ajax({
 		type : "post",
-		url : 'http://sp.grsx.cc'+getPath() + '/web/luckydraw.do?prov=FJ',
+		url : getPath() + '/web/luckydraw.do?prov=FJ',
 		dataType : "json",
 		contentType : "application/x-www-form-urlencoded; charset=utf-8",
 		success : function(data) {
@@ -1820,7 +1820,7 @@ function luckydraw(){
 function luckydrawCallBack(dt){
 	if(dt){
 		if(!dt["u"]){
-			window.location.href = getPath() + "/htmlwx/question2login.html";
+			window.location.href = getPath() + "/htmlwx/jc/newactivity.html";
 		}
 		var user = dt["u"][0];//用户的信息,获取抽奖次数
 		var luckyuser = dt["a"];//获奖名单,取前十个
@@ -1858,7 +1858,7 @@ function luckyBetSumbit(){
 	var res="";
 	$.ajax({
 		type : "post",
-		url : 'http://sp.grsx.cc'+getPath() + '/web/luckyBetSumbit.do?prov=FJ',
+		url : getPath() + '/web/luckyBetSumbit.do?prov=FJ',
 		dataType : "json",
 		contentType : "application/x-www-form-urlencoded; charset=utf-8",
 		success : function(data) {
@@ -1874,8 +1874,8 @@ function luckyBetSumbit(){
 //					res=3;
 //				}
 				var level = {"0":"无","1":"一","2":"二","3":"三","4":"四","5":"五","6":"六"};
-				var name ={"1":"59元代金券","2":"39元代金券","3":"19元代金券","4":"9元代金券","5":"8元代金券","0":"6元代金券"};
-				var str = {"1":960,"2":720,"3":840,"4":780,"5":900,"6":1020};
+				var name ={"1":"59元代金券","2":"39元代金券","3":"19元代金券","4":"9元代金券","5":"8元代金券","6":"6元代金券","0":"谢谢参与"};
+				var str = {"1":1110,"2":1180,"3":870,"4":882,"5":1350,"6":1420,"0":1440};
 				$("#run").rotate({ 
 					duration:3000, //转动时间 
 					angle: 0, //默认角度
@@ -1907,7 +1907,7 @@ function luckyBetSumbit(){
 function zhiyin(){
 	$.ajax({
 		type : "post",
-		url : 'http://sp.grsx.cc'+getPath() + '/web/zhiyin.do',
+		url : getPath() + '/web/zhiyin.do',
 		dataType : "json",
 		contentType : "application/x-www-form-urlencoded; charset=utf-8",
 		success : function(data) {
@@ -1919,7 +1919,7 @@ function myChallenge(){
 	var oid=getCookie("token");
 	
 	if(!oid){
-		window.location.href = "/竞猜项目/newactivity.html";
+		window.location.href = getPath() + "htmlwx/jc/newactivity.html";
 		return;
 	}
 	var request, srchString = location.search.substring(1,
@@ -1930,7 +1930,7 @@ function myChallenge(){
 	}
 	$.ajax({
 		type : "post",
-		url : 'http://sp.grsx.cc'+getPath() + '/web/mychallenge.do',
+		url : getPath() + '/web/mychallenge.do',
 		data : 'flag=' + flag,
 		dataType : "json",
 		contentType : "application/x-www-form-urlencoded; charset=utf-8",
@@ -1951,7 +1951,7 @@ function myChallenge(){
 
 function myChallengeCallbackJX(data) {
 	if (data.r==='请重新登录'){
-		window.location.href = "/竞猜项目/newactivity.html";
+		window.location.href = getPath() + "htmlwx/jc/newactivity.html";
 		return;
 	}else if (data.r==='当前无比赛'){
 		$("#mainbetdiv").hide();
@@ -2007,6 +2007,31 @@ function myChallengeCallbackJX(data) {
 			$("#betImg").attr("src","../hd_imgs/qrtz_no.png");
 			//$("#subbutton").hide();
 		}
+		
+		//支持率
+		var approvalRate = data['c'],win,draw,lose;
+		console.log(approvalRate)
+		var approvalRateSums = 0;
+//		for(var i=0;i<approvalRate.length;i++){
+			if(approvalRate["1"]){
+				approvalRateSums += approvalRate["1"];
+			}
+			if(approvalRate["3"]){
+				approvalRateSums += approvalRate["3"];
+			}
+			if(approvalRate["0"]){
+				approvalRateSums += approvalRate["0"];
+			}
+//		}
+		win = ((approvalRate["1"]/approvalRateSums)*100).toFixed(2);
+		draw = ((approvalRate["3"]/approvalRateSums)*100).toFixed(2);
+		lose = ((approvalRate["0"]/approvalRateSums)*100).toFixed(2);
+		if(isNaN(win)){win=0};
+		if(isNaN(draw)){draw=0};
+		if(isNaN(lose)){lose=0};
+		$(".approval_rate .win").text(win+"%");	
+		$(".approval_rate .draw").text(draw+"%");
+		$(".approval_rate .lose").text(lose+"%");
 
 	}
 
@@ -2021,7 +2046,7 @@ function checkbetSubmit(){
 		if(r=='ok'){
 			submsg = '恭喜你，提交成功!';
 			$("#betAgain").html(0);
-			$("#betImg").attr("src","../hd_imgs/qrtz_no.png");
+			$("#betImg").attr("src","images/qrtz_no.png");
 			//$("#subbutton").hide();
 		}else{
 			submsg = r;
@@ -2034,7 +2059,7 @@ function checkbetSubmit(){
 function mychallengeChoose() {
 	var oBtnbod = document.getElementById('btnbod');
 	var chooseodd=document.getElementById('chooseodd');
-	var aAbtn = oBtnbod.getElementsByTagName('a');
+	var aAbtn = oBtnbod.getElementsByTagName('p');
 	var aClassname = [ 'btn_sheng','btn_ping','btn_fu' ];
 
 	for(var i=0;i<aAbtn.length;i++){
@@ -2285,7 +2310,7 @@ function myChallengeCallback(data){
 		}
 		$("#windown-content a").click(function(){
 			closeWindow();
-			window.location = getPath() + "/htmlwx/mychallenge.html";
+			window.location = getPath() + "/htmlwx/jc/mychallenge.html";
 		});
 	});
 };
@@ -2446,7 +2471,7 @@ function myChallengeCallback11(data){
 		}
 		$("#windown-content a").click(function(){
 			closeWindow();
-			window.location = getPath() + "/htmlwx/mychallenge.html";
+			window.location = getPath() + "/htmlwx/jc/mychallenge.html";
 		});
 	});
 };
@@ -2629,7 +2654,7 @@ function myChallengeCallback1(data){
 		}
 		$("#windown-content a").click(function(){
 			closeWindow();
-			window.location = getPath() + "/htmlwx/mychallenge.html";
+			window.location = getPath() + "/htmlwx/jc/mychallenge.html";
 		});
 	});
 };
@@ -2639,7 +2664,7 @@ function myChallengeCallback1(data){
 	 $.ajax({
 		    async:false,
 			type : "post",
-			url : 'http://sp.grsx.cc'+getPath() + '/web/betsubmit.do',
+			url : getPath() + '/web/betsubmit.do',
 			data : datas,
 			dataType : "json",
 			contentType : "application/x-www-form-urlencoded; charset=utf-8",
@@ -2653,7 +2678,7 @@ function myChallengeCallback1(data){
  function studyGarden(){
 	 $.ajax({
 			type : "post",
-			url : 'http://sp.grsx.cc'+getPath() + '/web/studygarden.do',
+			url : getPath() + '/web/studygarden.do',
 			dataType : "json",
 			contentType : "application/x-www-form-urlencoded; charset=utf-8",
 			success : function(data) {
@@ -2723,7 +2748,7 @@ function myChallengeCallback1(data){
 	 var day = $("#day").val();
 	 $.ajax({
 			type : "post",
-			url : 'http://sp.grsx.cc'+getPath() + '/web/ranking.do',
+			url : getPath() + '/web/ranking.do',
 			data : 'startIdx=' + startIdx+'&issue='+issue+'&day='+day,
 			dataType : "json",
 			contentType : "application/x-www-form-urlencoded; charset=utf-8",
@@ -2736,7 +2761,7 @@ function myChallengeCallback1(data){
  function ranking(startIdx){
 	 $.ajax({
 			type : "post",
-			url : 'http://sp.grsx.cc'+getPath() + '/web/ranking.do',
+			url : getPath() + '/web/ranking.do',
 			data : 'startIdx=' + startIdx,
 			dataType : "json",
 			contentType : "application/x-www-form-urlencoded; charset=utf-8",
@@ -2793,7 +2818,7 @@ function myChallengeCallback1(data){
 	}
 	 $.ajax({
 		type : "post",
-		url : 'http://sp.grsx.cc'+getPath() + '/web/hdrecord.do',
+		url : getPath() + '/web/hdrecord.do',
 		dataType : "json",
 		contentType : "application/x-www-form-urlencoded; charset=utf-8",
 		success : function(data) {
@@ -2934,7 +2959,7 @@ function myChallengeCallback1(data){
  function getChangeTicket(){
 	 $.ajax({
 	 		type : "post",
-	 		url : 'http://sp.grsx.cc'+getPath() + '/web/getChangeTicket.do',
+	 		url : getPath() + '/web/getChangeTicket.do',
 	 		dataType : "json",
 	 		contentType : "application/x-www-form-urlencoded; charset=utf-8",
 	 		success : function(data) {
@@ -2983,7 +3008,7 @@ function myChallengeCallback1(data){
  	 $.ajax({
  		    async:false,
  			type : "post",
- 			url : 'http://sp.grsx.cc'+getPath() + '/web/toChange.do',
+ 			url : getPath() + '/web/toChange.do',
  			data :  'activityid=' + activityid,
  			dataType : "json",
  			contentType : "application/x-www-form-urlencoded; charset=utf-8",
@@ -3005,7 +3030,7 @@ function myChallengeCallback1(data){
  function getChangeTicketDetail(){
 	 $.ajax({
 	 		type : "post",
-	 		url : 'http://sp.grsx.cc'+getPath() + '/web/getChangeTicketDetail.do',
+	 		url : getPath() + '/web/getChangeTicketDetail.do',
 	 		dataType : "json",
 	 		contentType : "application/x-www-form-urlencoded; charset=utf-8",
 	 		success : function(data) {
@@ -3056,7 +3081,7 @@ function myChallengeCallback1(data){
  function getCjRecord(){
  	$.ajax({
  		type : "post",
- 		url : 'http://sp.grsx.cc'+getPath() + '/web/getCjRecord.do',
+ 		url : getPath() + '/web/getCjRecord.do',
  		dataType : "json",
  		contentType : "application/x-www-form-urlencoded; charset=utf-8",
  		success : function(data) {
@@ -3073,11 +3098,14 @@ function myChallengeCallback1(data){
  		tbody.removeChild(tbody.firstChild);
  	}
  	var dt = data["r"];
- 	if(dt.indexOf("请重新登录") > -1){
- 		window.location = getPath() + "/htmlwx/question2login.html";
- 	}
+   	if(dt.indexOf("请重新登录") > -1){
+   		window.location = getPath() + "/htmlwx/jc/newactivity.html";
+   	}
  	if(dt){
  		for (i = 0; i < dt.length; i++) {
+ 			if (!dt[i].name) {
+ 				continue;
+ 			}
  			if (dt[i] != null) {
  				if(dt[i].raffleTime>1477379460000){//之前的纪录不要了，暂时从8月12号开始
  					tr = tbody.insertRow(tbody.rows.length);
@@ -3090,69 +3118,75 @@ function myChallengeCallback1(data){
  	 				if(dt[i].name&&dt[i].worth){
  	 					//name=dt[i].name+dt[i].worth+"元";
  	 					name=dt[i].name;
- 	 				}else{
- 	 					name="六等奖";
  	 				}
+// 	 				else{
+// 	 					name="六等奖";
+// 	 				}
  	 				td.innerHTML = name;
  	 				td = tr.insertCell(tr.cells.length);
  	 				td.width="260";
  	 				if(dt[i].name&&dt[i].worth){
  	 					if(dt[i].num){
- 	 						td.innerHTML = "兑换码："+dt[i].num;
+ 	 						td.innerHTML = "兑换码："+dt[i].num+'<button class="btn erweima" style="background: #1a569d;padding: 2px 5px;" data-id="'+name+dt[i].num+'">二维码</button>';
  	 					}else{
  	 						td.innerHTML = "发奖中";
  	 					}
- 	 				}else{
- 	 					td.innerHTML = "50积分";
  	 				}
+// 	 				else{
+// 	 					td.innerHTML = "50积分";
+// 	 				}
  				}
  			}
  		}
  	}
  }
-// //中奖记录回调
-// function CjRecordCallBack(data){
-// 	var tr, td, i;
-// 	var tbody = document.getElementById("res");
-// 	while (tbody.rows.length > 0) {
-// 		tbody.removeChild(tbody.firstChild);
-// 	}
-// 	var dt = data["r"];
-// 	if(dt){
-// 		for (i = 0; i < dt.length; i++) {
-// 			if (dt[i] != null) {
-// 				if(dt[i].raffleTime>1439308799000){//之前的纪录不要了，暂时从8月12号开始
-// 				tr = tbody.insertRow(tbody.rows.length);
-// 				tr.className = "hh_line";
-// 				tr.style.height="1px";
-// 				td = tr.insertCell(tr.cells.length);
-// 				td.setAttribute("colspan", 2);
-// 				td.innerHTML = "<div class='vv'></div>";
-// 				tr = tbody.insertRow(tbody.rows.length);
-// 				td = tr.insertCell(tr.cells.length);
-// 				td.className="pad-lf";
-// 				td.width="35%";
-// 				var time = formatDate(dt[i].createTime).split(" ");
-// 				td.innerHTML = time[0]+'<br>'+time[1];
-// 				td = tr.insertCell(tr.cells.length);
-// 				td.width="65%";
-// 				var name="";
-// 				if(dt[i].award){
-// 					name="奖品名称："+dt[i].award;
-// 					if(dt[i].code){
-// 						name+="<br>兑换码："+dt[i].code;
-// 					}else{
-// 						name+="<br>兑换码：--";
-// 					}
-// 				}else{
-// 					name="奖品名称：未中奖<br>兑换码：--";
-// 				}
-// 				td.innerHTML = name;
-// 			  }
-// 			}
-// 		}
-// 	}
-// }
+
+
+   //中奖记录回调
+   /*function CjRecordCallBack(data){
+   	var tr, td, i;
+   	var tbody = document.getElementById("res");
+   	while (tbody.rows.length > 0) {
+   		tbody.removeChild(tbody.firstChild);
+   	}
+   	var dt = data["r"];
+   	if(dt){
+   		for (i = 0; i < dt.length; i++) {
+   			if (dt[i] != null) {
+   				if(dt[i].raffleTime>1439308799000){//之前的纪录不要了，暂时从8月12号开始
+   				tr = tbody.insertRow(tbody.rows.length);
+   				tr.className = "hh_line";
+   				tr.style.height="1px";
+   				td = tr.insertCell(tr.cells.length);
+   				td.setAttribute("colspan", 2);
+   				td.innerHTML = "<div class='vv'></div>";
+   				tr = tbody.insertRow(tbody.rows.length);
+   				td = tr.insertCell(tr.cells.length);
+   				td.className="pad-lf";
+   				td.width="35%";
+   				var time = formatDate(dt[i].createTime).split(" ");
+   				td.innerHTML = time[0]+'<br>'+time[1];
+   				td = tr.insertCell(tr.cells.length);
+   				td.width="65%";
+   				var name="";
+   				if(dt[i].award){
+   					name="奖品名称："+dt[i].award;
+   					if(dt[i].code){
+   						name+="<br>兑换码："+dt[i].code;
+   					}else{
+   						name+="<br>兑换码：--";
+   					}
+   				}else{
+   					name="奖品名称：未中奖<br>兑换码：--";
+   				}
+   				td.innerHTML = name;
+   			  }
+   			}
+   		}
+   	}
+   }*/
+   
+   
  /**最新活动相关js结束**/
  //积分详情
 function integralDetail(){
@@ -3172,7 +3206,7 @@ function integralDetail(){
 	var type=$("#type").val();
 	$.ajax({
 		type : "GET",
-		url : 'http://sp.grsx.cc'+getPath() + '/web/integralDetail.do?type='+type,
+		url : getPath() + '/web/integralDetail.do?type='+type,
 		dataType : "json",
 		contentType : "application/x-www-form-urlencoded; charset=utf-8",
 		success : function(data) {
@@ -3243,7 +3277,7 @@ function sendSms(){
 	if(checkMobile()){
 		$.ajax({
 			type : "post",
-			url : 'http://sp.grsx.cc'+getPath() + '/web/sendSms.do',
+			url : getPath() + '/web/sendSms.do',
 			data : "mobile="+mobile+"&openId="+openId,
 			dataType : "json",
 			contentType : "application/x-www-form-urlencoded; charset=utf-8",
@@ -3305,7 +3339,7 @@ function register(){
 	var datas = "mobile=" + mobile + "&mobileCode=" + mobileCode + "&password=" + password;
 	$.ajax({
 		type : "post",
-		url : 'http://sp.grsx.cc'+getPath() + '/web/register.do',
+		url : getPath() + '/web/register.do',
 		data : datas,
 		dataType : "json",
 		contentType : "application/x-www-form-urlencoded; charset=utf-8",
@@ -3319,10 +3353,10 @@ function register(){
 //				showTipsWindown('', 'worn',417,527);
 //				$("#windown-content p[name=message]").html("注册成功");
 				
-				/*alert("注册成功");
-				window.location = getPath() + "/htmlwx/mychallenge.html?flag=first";*/
 				alert("注册成功");
-				window.location = getPath() + "/htmlwx/hd_dati.html";
+				window.location = getPath() + "/htmlwx/jc/mychallenge.html?flag=first";
+//				alert("注册成功");
+//				window.location = getPath() + "/htmlwx/hd_dati.html";
 				
 				//自动跳出指引页面
 				//window.location = getPath() + "/htmlwx/zhiyin.html";
@@ -3347,7 +3381,7 @@ function getRedbag(){
 		if( u && f && a){
 			$.ajax({
 				type : "post",
-				url : 'http://sp.grsx.cc'+getPath() + '/web/redbag.do',
+				url : getath() + '/web/redbag.do',
 				data : "&f="+f+"&a="+a+"&u="+u,
 				dataType : "json",
 				contentType : "application/x-www-form-urlencoded; charset=utf-8",

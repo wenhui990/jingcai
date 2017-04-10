@@ -563,8 +563,9 @@ li {
 }
 
 .btn_3 font {
-	font-size: 18px;
+	font-size: 35px;
 	color: #c1c4cb;
+	line-height: 35px;
 }
 
 
@@ -708,7 +709,7 @@ li {
 /*-zuce.html-*/
 
 .srk_all .skr03 {
-	width: 425px;
+	width: 55%;
 	height: 115px;
 	/*background:url(../images/srk_03.png) no-repeat;*/
 	padding-left: 0px;
@@ -790,7 +791,7 @@ li {
 	background: url(../images/yzm.png) no-repeat scroll 0 0;
 	display: inline-block;
 	height: 120px;
-	width: 260px;
+	width: 30%;
 	line-height: 64px;
 	font-size: 24px;
 	text-align: center;

@@ -5,29 +5,49 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="format-detection" content="telephone=no">
 		<meta name="viewport" content="width=750, user-scalable=no">
-		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
 		<link href="css/wx-styles.css" rel="stylesheet" type="text/css" />
 		<link href="css/wx-styles20161024.css" rel="stylesheet" />
 		<title>幸运大抽奖</title>
+		<style type="text/css">
+			.info1 {
+				margin: 30px 20px;
+				text-align: center;
+				color: #fff;
+			}
+			
+			.info1 a {
+				color: #fff;
+			}
+			
+			.info1 span {
+				margin: 5%;
+				background: #1a569d;
+				padding: 2% 3% 2.5%;
+				border-radius: 6%;
+			}
+		</style>
 	</head>
 
 	<body style="background-size: contain;">
 		<img src="images/hdjs_header.png" class="bg_img" />
 		<div class="container">
 			<div class="content_hd02">
-				<div class="zp_bj"></div>
+				<!--<div class="zp_bj"></div>-->
 				<div class="zhuanp">
 					<div class="zhuanpan">
 						<span class="jiantou"><img src="images/pan_jt.png" /></span>
-						<img src="images/pan.png" id="run" />
+						<img src="images/pan2.png" id="run" />
 						<div class="pointer" id="btn_run"><img src="images/pan_sm.png" /></div>
 						<div class="jiantou"></div>
 					</div>
 				</div>
-				<div class="chaxun">
-					<a href="hd_zhongjiang.html"><img src="images/zjjl.png"></a> &nbsp; &nbsp;
-					<a href="hd_guize.html"><img src="images/hd_gz.png"></a>
-				</div>
+				<section class="info1">
+					<p class="info_btn">
+						<span style="margin-left: 10px;"><a href="draw_record.html">抽奖记录</a></span>
+						<span style=""><a href="active_rule.html">活动规则</a></span>
+					</p>
+				</section>
 				<div class="rotate-cover" id="cov">
 					<div class="roc-h">
 						<span id="cov0">
@@ -62,7 +82,7 @@
 		<script type="text/javascript" src="js/wxweb.js"></script>
 		<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 		<script language="javascript" src="js/Rotate.js" type="text/javascript"></script>
-		<!--<script language="javascript" src="../js/lucky/jquery.bootstrap.newsbox.min.js" type="text/javascript"></script>-->
+		<script language="javascript" src="js/jquery.bootstrap.newsbox.min.js" type="text/javascript"></script>
 		<script type="text/javascript">
 			$(function() {
 				$("#cov").click(function() {
@@ -72,7 +92,7 @@
 			})
 			//抽奖
 			luckydraw();
-			initWx(window.location.href, "/htmlwx/hdbegin.html", '激情美洲杯，天天送大奖', false);
+			initWx(window.location.href, "newactivity.html", '猜比赛 抽红包', false);
 			loadGaScript();
 		</script>
 	</body>

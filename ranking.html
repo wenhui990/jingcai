@@ -13,7 +13,9 @@
 				margin-bottom: 30px;
 			}
 			
-			.none{display: none;}
+			.none {
+				display: none;
+			}
 			
 			#logo_img {
 				width: 100%;
@@ -23,8 +25,7 @@
 				margin: 0 20px 20px;
 			}
 			
-			.info_content {
-			}
+			.info_content {}
 			
 			.info_title {
 				width: 7em;
@@ -50,42 +51,58 @@
 				border-radius: 5px;
 			}
 			
-			
-			.info_content{
+			.info_content {
 				line-height: 2;
 			}
 			
-			.table tbody tr{border-bottom: 0.5px solid #2982ae;box-shadow: 0px 1px 0px 0px #fff;}
-			.table tbody tr td{border-top: 0;}
-			.table th,td{text-align: center;}
-			.table th{background-color: #2982ae;border: 0 !important;}
+			.table tbody tr {
+				border-bottom: 0.5px solid #2982ae;
+				box-shadow: 0px 1px 0px 0px #fff;
+			}
 			
-			.flow{
+			.table tbody tr td {
+				border-top: 0;
+			}
+			
+			.table th,
+			td {
+				text-align: center;
+			}
+			
+			.table th {
+				background-color: #2982ae;
+				border: 0 !important;
+			}
+			
+			.flow {
 				position: fixed;
 				top: 0;
 				left: 0;
 				width: 100%;
 				height: 100%;
 			}
-			#flow_main{
+			
+			#flow_main {
 				background-color: #1a569d;
 				width: 60%;
 				text-align: center;
 				padding: 20px;
 			}
-			#flow_main img{
+			
+			#flow_main img {
 				width: 90%;
 			}
-			#rankingDay{
+			
+			#rankingDay {
 				margin: 15px auto;
 				height: 25px;
 				line-height: 25px;
 			}
-			#bygoneDay{
-				color:#000;
+			
+			#bygoneDay {
+				color: #000;
 				margin-left: 5px;
 			}
-			
 		</style>
 	</head>
 
@@ -96,43 +113,45 @@
 			<div id="rankingDay">
 				往日查询
 				<select name="" id="bygoneDay">
-					<option value="2017-4-17">4月17日</option>
-					<option value="2017-4-18">4月18日</option>
-					<option value="2017-4-19">4月19日</option>
-					<option value="2017-4-20">4月20日</option>
-					<option value="2017-4-21">4月21日</option>
-					<option value="2017-4-22">4月22日</option>
-					<option value="2017-4-23">4月23日</option>
-					<option value="2017-4-24">4月24日</option>
-					<option value="2017-4-25">4月25日</option>
-					<option value="2017-4-26">4月26日</option>
-					<option value="2017-4-27">4月27日</option>
-					<option value="2017-4-28">4月28日</option>
-					<option value="2017-4-29">4月29日</option>
-					<option value="2017-4-30">4月30日</option>
-					<option value="2017-5-1">5月1日</option>
-					<option value="2017-5-2">5月2日</option>
-					<option value="2017-5-3">5月3日</option>
-					<option value="2017-5-4">5月4日</option>
-					<option value="2017-5-5">5月5日</option>
-					<option value="2017-5-6">5月6日</option>
-					<option value="2017-5-7">5月7日</option>
-					<option value="2017-5-8">5月8日</option>
-					<option value="2017-5-9">5月9日</option>
-					<option value="2017-5-10">5月10日</option>
-					<option value="2017-5-11">5月11日</option>
-					<option value="2017-5-12">5月12日</option>
-					<option value="2017-5-13">5月13日</option>
-					<option value="2017-5-14">5月14日</option>
+					<option value="">请选择</option>
+					<option value="2017-04-09">4月9日</option>
+					<option value="2017-04-17">4月17日</option>
+					<option value="2017-04-18">4月18日</option>
+					<option value="2017-04-19">4月19日</option>
+					<option value="2017-04-20">4月20日</option>
+					<option value="2017-04-21">4月21日</option>
+					<option value="2017-04-22">4月22日</option>
+					<option value="2017-04-23">4月23日</option>
+					<option value="2017-04-24">4月24日</option>
+					<option value="2017-04-25">4月25日</option>
+					<option value="2017-04-26">4月26日</option>
+					<option value="2017-04-27">4月27日</option>
+					<option value="2017-04-28">4月28日</option>
+					<option value="2017-04-29">4月29日</option>
+					<option value="2017-04-30">4月30日</option>
+					<option value="2017-05-1">5月1日</option>
+					<option value="2017-05-2">5月2日</option>
+					<option value="2017-05-3">5月3日</option>
+					<option value="2017-05-4">5月4日</option>
+					<option value="2017-05-5">5月5日</option>
+					<option value="2017-05-6">5月6日</option>
+					<option value="2017-05-7">5月7日</option>
+					<option value="2017-05-8">5月8日</option>
+					<option value="2017-05-9">5月9日</option>
+					<option value="2017-05-10">5月10日</option>
+					<option value="2017-05-11">5月11日</option>
+					<option value="2017-05-12">5月12日</option>
+					<option value="2017-05-13">5月13日</option>
+					<option value="2017-05-14">5月14日</option>
 				</select>
-			</div>			
+			</div>
 			<table class="table pai_list">
 				<thead>
 					<th>排名</th>
 					<th>手机号码</th>
 					<th>投注详情</th>
 				</thead>
-				<tbody>
+				<tbody id="rankings">
 					<tr>
 						<td>1</td>
 						<td>
@@ -172,9 +191,9 @@
 				</tbody>
 			</table>
 		</div>
-		
+
 		<!-- Modal弹出模版 -->
-        <div class="flow none">
+		<div class="flow none">
 			<div id="flow_main">
 				<p class="info_content">
 					扫描进行兑换
@@ -184,7 +203,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<footer style="position: fixed;bottom: 0;color: #E3E3E3;text-align: center;width: 100%;">
 			<p>上划显示更多</p>
 		</footer>
@@ -193,21 +212,64 @@
 		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			$(function() {
-				$(document).on("click",".erweima",function(e){
+				$(document).on("click", ".erweima", function(e) {
 					e.stopPropagation();
 					var winheight = $(window).height();
 					var divheight = $("#flow_main").height();
-					var divtop = (winheight/2) - 103;
-					console.log(winheight+ "  "+ divheight + "  " +divtop)
-					$("#flow_main").css("margin",divtop+"px auto");
+					var divtop = (winheight / 2) - 103;
+					console.log(winheight + "  " + divheight + "  " + divtop)
+					$("#flow_main").css("margin", divtop + "px auto");
 					$(".flow").show();
 				});
-				$(document).on("click",".flow",function(e){
+				$(document).on("click", ".flow", function(e) {
 					e.stopPropagation();
 				});
-				$("body").click(function(){
+				$("body").click(function() {
 					$(".flow").hide();
 				})
+				//根据毫秒数格式化时间
+				function timeF() {
+					var t = new Date();
+					var y = t.getFullYear();
+					var m = t.getMonth();
+					var d = t.getDate();
+					(m+1)<10 ? m = "0"+(m+1) : m=(m+1);
+					d<10 ? d = "0"+d : d=d;
+					return y + "-" + m + "-" + d;
+				}
+				ranking(timeF());
+
+				function ranking(t) {
+					$.ajax({
+						type: "get",
+						url: "http://sp.grsx.cc/ilsp-wechat/web/top.do?u=1&d=" + t,
+						async: true,
+						datatype: 'json',
+						success: function(data) {
+//							var data = JSON.parse(data);
+							$("#rankings").html('');
+							$.each(data.r, function(i, e) {
+								var html = '<tr><td>' + (i+1) + '</td>' +
+									'<td>' + e.MOBILE + '</td>' +
+									'<td>' +
+									'	<a href="bet_descp.html?id='+e.id+'" class="btn select" style="background: #1a569d;padding: 2px 5px;color: #fff;">查看</a>' +
+									'</td></tr>'
+								$("#rankings").append(html);
+							});
+							if(data.c===0||data.c===null){
+								$("#ranking").text("未参赛");
+							}else{
+								$("#ranking").text(data.c);
+							}
+							
+						}
+					});
+
+				}
+				$(document).on('change', '#bygoneDay', function() {
+					t = $(this).val();
+					ranking(t);
+				});
 			});
 		</script>
 	</body>
