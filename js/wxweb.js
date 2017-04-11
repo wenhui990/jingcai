@@ -112,7 +112,7 @@ function pwdReset(id){
 function integralSearch(){
 	var oid=getCookie("token");
 	if(!oid){
-		window.location = getPath() + "/htmlwx/newactivity.html";
+		window.location = getPath() + "/htmlwx/jc/newactivity.html";
 		return;
 	}
 	$.ajax({
@@ -1327,7 +1327,7 @@ function checkCfmUserPwd (){
 function question(){
 	var oid=getCookie("token");
 	if(!oid){
-		window.location = getPath() + "/htmlwx/newactivity.html";
+		window.location = getPath() + "/htmlwx/jc/newactivity.html";
 		return;
 	}
 	$.ajax({
@@ -1579,37 +1579,37 @@ function loginChallenge(flg) {
 			    if (url.indexOf("?") != -1) {
 			      var strs = url.split("=");
 			      if(strs[1]=="ggk"){
-						window.location = getPath() + "/htmlwx/jc/hd_ggk.html";
+						window.location = getPath() + "/htmlwx/hd_ggk.html";
 						return;
 				  } else if(strs[1] == "ggkzj"){
-					  	window.location = getPath() + "/htmlwx/jc/hd_ggk_zj.html";
+					  	window.location = getPath() + "/htmlwx/hd_ggk_zj.html";
 						return;
 				  } else if(strs[1] == "ggklj"){
-					  	window.location = getPath() + "/htmlwx/jc/perfectInfo.html";
+					  	window.location = getPath() + "/htmlwx/perfectInfo.html";
 						return;
 				  } else if(strs[1] == "raffle"){
-					  	window.location = getPath() + "/htmlwx/jc/hd_raffle.html";
+					  	window.location = getPath() + "/htmlwx/hd_raffle.html";
 						return;
 				  } else if(strs[1] == "raffler"){
-					  	window.location = getPath() + "/htmlwx/jc/hd_raffle_record.html";
+					  	window.location = getPath() + "/htmlwx/hd_raffle_record.html";
 						return;
 				  }
 			    }
 				if(flg!="login"){
 					if(data["s"]==0){//首次激活活动要提示赠送多少积分
 //						window.location = getPath() + "/htmlwx/firstPage.html";
-						window.location = getPath() + "/htmlwx/jc/hd_dati.html";
+						window.location = getPath() + "/htmlwx/hd_dati.html";
 						//showTipsWindown('', 'worn',300,200);
 					}else{
 						if(flg=='question'){//参加问卷调查登陆
 							//window.location = getPath() + "/htmlwx/question.html";
-							window.location = getPath() + "/htmlwx/jc/hd_dati.html";
+							window.location = getPath() + "/htmlwx/hd_dati.html";
 						}else{
 							window.location = getPath() + "/htmlwx/jc/mychallenge.html";
 						}
 					}
 				}else{
-					window.location = getPath() + "/htmlwx/jc/jifen.html";
+					window.location = getPath() + "/htmlwx/jifen.html";
 				}
 			}else{
 				refreshCc();
@@ -1820,21 +1820,21 @@ function luckydraw(){
 function luckydrawCallBack(dt){
 	if(dt){
 		if(!dt["u"]){
-			window.location.href = getPath() + "/htmlwx/newactivity.html";
+			window.location.href = getPath() + "/htmlwx/jc/newactivity.html";
 		}
 		var user = dt["u"][0];//用户的信息,获取抽奖次数
 		var luckyuser = dt["a"];//获奖名单,取前十个
 		var userDiv = '';
 		$("#availableCount").html(user.availableRaffleCount);//
-		userDiv+='<ul class="list_con2" id="dynamicshow">';
+		userDiv+='<dl class="peolist">';
 		for(var i=0;i<luckyuser.length;i++){
 			if(i==0){
-				userDiv+='<li>恭喜'+luckyuser[i].mobile.substring(0,3)+'*****'+luckyuser[i].mobile.substring(8)+'获得'+luckyuser[i].worth+'元'+luckyuser[i].name+'</li>';
+				userDiv+='<dd><span>恭喜'+luckyuser[i].mobile.substring(0,3)+'*****'+luckyuser[i].mobile.substring(8)+'获得'+luckyuser[i].worth+'元'+luckyuser[i].name+'</span></dd>';
 			}else{
-			    userDiv+='<li style="display:none;">恭喜'+luckyuser[i].mobile.substring(0,3)+'*****'+luckyuser[i].mobile.substring(8)+'获得'+luckyuser[i].worth+'元'+luckyuser[i].name+'</li>';
+			    userDiv+='<dd style="display:none;"><span>恭喜'+luckyuser[i].mobile.substring(0,3)+'*****'+luckyuser[i].mobile.substring(8)+'获得'+luckyuser[i].worth+'元'+luckyuser[i].name+'</span></dd>';
 			}
 		}
-		userDiv+='</ul>';
+		userDiv+='</dl>';
 		$("#luckyUser").html(userDiv);
 		//获奖名单动态显示
 		$(".list_con2").bootstrapNews({
@@ -1875,7 +1875,7 @@ function luckyBetSumbit(){
 //				}
 				var level = {"0":"无","1":"一","2":"二","3":"三","4":"四","5":"五","6":"六"};
 				var name ={"1":"59元代金券","2":"39元代金券","3":"19元代金券","4":"9元代金券","5":"8元代金券","6":"6元代金券","0":"谢谢参与"};
-				var str = {"1":1110,"2":1180,"3":870,"4":882,"5":1350,"6":1420,"0":1440};
+				var str = {"1":1106,"2":1210,"3":902,"4":954,"5":1006,"6":1414,"0":798};
 				$("#run").rotate({ 
 					duration:3000, //转动时间 
 					angle: 0, //默认角度
@@ -1884,6 +1884,7 @@ function luckyBetSumbit(){
 					callback: function(){ 
 						//$(".dialog").css("background","url(../images/zj"+res+".png)");
 						//$(".dialog").css("background-repeat","no-repeat");
+						$("#cov0").find('img').attr('src','images/jdek1.png');
 						$("#cov1").html("恭喜您，获得<font class='yellow'>"+level[data.l]+"等奖</font>"+name[data.l]);
 						$("#cov2").html(level[data.l]+"等奖"+name[data.l]);
 						$("#cov").show(); 
@@ -1919,7 +1920,7 @@ function myChallenge(){
 	var oid=getCookie("token");
 	
 	if(!oid){
-		window.location.href = getPath() + "htmlwx/newactivity.html";
+		window.location.href = getPath() + "/htmlwx/jc/newactivity.html";
 		return;
 	}
 	var request, srchString = location.search.substring(1,
@@ -1951,7 +1952,7 @@ function myChallenge(){
 
 function myChallengeCallbackJX(data) {
 	if (data.r==='请重新登录'){
-		window.location.href = getPath() + "htmlwx/jc/newactivity.html";
+		window.location.href = getPath() + "/htmlwx/jc/newactivity.html";
 		return;
 	}else if (data.r==='当前无比赛'){
 		$("#mainbetdiv").hide();
@@ -3099,7 +3100,7 @@ function myChallengeCallback1(data){
  	}
  	var dt = data["r"];
    	if(dt.indexOf("请重新登录") > -1){
-   		window.location = getPath() + "/htmlwx/newactivity.html";
+   		window.location = getPath() + "/htmlwx/jc/newactivity.html";
    	}
  	if(dt){
  		for (i = 0; i < dt.length; i++) {
@@ -3117,7 +3118,7 @@ function myChallengeCallback1(data){
  	 				var name="";
  	 				if(dt[i].name&&dt[i].worth){
  	 					//name=dt[i].name+dt[i].worth+"元";
- 	 					name=dt[i].name;
+ 	 					name=dt[i].worth+'等奖';
  	 				}
 // 	 				else{
 // 	 					name="六等奖";
@@ -3127,7 +3128,7 @@ function myChallengeCallback1(data){
  	 				td.width="260";
  	 				if(dt[i].name&&dt[i].worth){
  	 					if(dt[i].num){
- 	 						td.innerHTML = "兑换码："+dt[i].num+'<button class="btn erweima" style="background: #1a569d;padding: 2px 5px;" data-id="'+name+dt[i].num+'">二维码</button>';
+ 	 						td.innerHTML = "兑换码："+dt[i].num+'<button class="btn erweima" style="background: #1a569d;padding: 2px 5px;" data-id="'+dt[i].name+dt[i].num+'">二维码</button>';
  	 					}else{
  	 						td.innerHTML = "发奖中";
  	 					}

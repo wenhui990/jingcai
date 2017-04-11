@@ -92,6 +92,17 @@
 			#flow_main img {
 				width: 90%;
 			}
+			
+			.ranking_on {
+				float: right;
+				background: #1a569d;
+				padding: 0.3em 0.5em;
+				vertical-align: middle;
+				border-radius: 5px;
+			}
+			a{
+				color: #fff;
+			}
 		</style>
 	</head>
 
@@ -101,6 +112,9 @@
 			<p class="info_title">您的抽奖记录
 				<div class="info_title_right"></div>
 			</p>
+			<!--<div class="ranking_on">
+				<a href="ranking.html">查看排名</a>
+			</div>-->
 			<div class="clearfix"></div>
 			<table class="table">
 				<thead>
@@ -109,35 +123,6 @@
 					<th>详情</th>
 				</thead>
 				<tbody id="res">
-					<!--<tr>
-						<td>2017-05-01</td>
-						<td>
-							代金劵50元
-						</td>
-						<td>
-							121548745643489
-							<button class="btn erweima" style="background: #1a569d;padding: 2px 5px;">二维码</button>
-						</td>
-					</tr>
-					<tr>
-						<td>2017-05-01</td>
-						<td>
-							未中奖
-						</td>
-						<td>
-							— —
-						</td>
-					</tr>
-					<tr>
-						<td>2017-05-01</td>
-						<td>
-							代金劵50元
-						</td>
-						<td>
-							121548745643489
-							<button class="btn erweima" style="background: #1a569d;padding: 2px 5px;">二维码</button>
-						</td>
-					</tr>-->
 				</tbody>
 			</table>
 		</div>
@@ -176,7 +161,7 @@
 					$("#flow_main").css("margin", divtop + "px auto");
 					$(".flow").show();
 					var codeName = $(this).attr('data-id');
-					$("#erweima").find('img').attr('src',"http://sp.grsx.cc/ilsp-wechat/web/barcode.do?t=2&c="+codeName);
+					$("#erweima").find('img').attr('src', "http://sp.grsx.cc/ilsp-wechat/web/barcode.do?t=2&c=" + codeName);
 				});
 				$(document).on("click", ".flow", function(e) {
 					e.stopPropagation();

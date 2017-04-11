@@ -395,8 +395,8 @@ html, body {
 	position: absolute;
 	width: 221px;
 	height: 299px;
-	top: 145px;
-	left: 148px;
+	top: 122px;
+	left: 175px;
 	cursor: pointer;
 	z-index:999;
 }
@@ -443,7 +443,7 @@ html, body {
 }
 .roc_jiangpin{
 	position:absolute;
-	top:0;
+	top:135px;
 	/* left:220px; */
 	color:#ff5842;
 	text-align:center;

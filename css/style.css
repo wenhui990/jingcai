@@ -4,7 +4,7 @@
 .logo-sec p {width: 100%;height:30px;line-height: 30px;text-align: center;margin-top: -40px;color:#fff;}
 .logo-sec p em {color:#ffb820;margin:0 2px;}
 
-.main-sec {width: 92%;overflow: hidden;padding:0 4%;}
+.main-sec {width: 100%%;overflow: hidden;}
 
 .h15 {height: 15px;}
 .pt5 {padding-top: 5px;}
@@ -13,7 +13,7 @@
 .m-title h3 {width: 35%;height:30px;line-height: 30px;text-align: center;color:#ffb820;background: #c72222;margin:0 auto;font-size: 1.3em;font-weight: bold;}
 
 .peolist {width: 100%;overflow: hidden;}
-.peolist dd {width: 92%;overflow: hidden;padding:14px 0;margin:0 auto;text-align: center;background: -ms-linear-gradient(top, #0f734f,  #3aa078);background:-moz-linear-gradient(top,#0f734f,#3aa078);background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#0f734f), to(#3aa078));background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#0f734f), to(#3aa078));background: -webkit-linear-gradient(top, #0f734f, #3aa078);background: -o-linear-gradient(top, #0f734f, #3aa078);}
+.peolist dd {width: 100%;overflow: hidden;padding:30px 0;margin:0 auto;text-align: center;background: -ms-linear-gradient(top, #0f734f,  #3aa078);background:-moz-linear-gradient(top,#0f734f,#3aa078);background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#0f734f), to(#3aa078));background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#0f734f), to(#3aa078));background: -webkit-linear-gradient(top, #0f734f, #3aa078);background: -o-linear-gradient(top, #0f734f, #3aa078);}
 .peolist dd:nth-of-type(3n) {border-bottom: none;}
 
 .peolist dd img {float: left;}
