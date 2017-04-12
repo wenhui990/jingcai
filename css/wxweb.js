@@ -3103,7 +3103,7 @@ function myChallengeCallback1(data){
  	 						td.innerHTML = "发奖中";
  	 					}
  	 				}else{
- 	 					td.innerHTML = "50积分";
+// 	 					td.innerHTML = "50积分";
  	 				}
  				}
  			}

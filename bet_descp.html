@@ -13,12 +13,16 @@
 				margin-bottom: 30px;
 			}
 			
+			.none {
+				display: none;
+			}
+			
 			#logo_img {
 				width: 100%;
 			}
 			
 			.info {
-				margin: 0 20px 20px;
+				margin: 0 20px 80px;
 			}
 			
 			.info_content {
@@ -64,14 +68,14 @@
 			</table>
 		</div>
 		<footer style="position: fixed;bottom: 0;color: #E3E3E3;text-align: center;width: 100%;">
-			<!--<p>上划显示更多</p>-->
+			<p class="shanghua none">上划显示更多</p>
 		</footer>
 
 		<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			$(function() {
-				var _id, _url;
+				var _id, _url,fl=true,n=1;
 				_id = getUrlParams().id;
 				if(_id) {
 					_url = "http://sp.grsx.cc/ilsp-wechat/web/bet.do?id=" + _id;
@@ -90,6 +94,19 @@
 							$(".zj_list").append(html);
 						})
 
+					}
+				});
+
+				$(document).on("scroll", function() {
+					var bodyheight = $(document.body).height();
+					var scorlltop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+					var viewheight = $(window).height();
+					//			console.log(bodyheight + " ===" + scorlltop + "=========" + viewheight);
+					if((scorlltop + viewheight) >= bodyheight) {
+						n++;
+						$(".shanghua").show();
+					}else{
+						$(".shanghua").hide();
 					}
 				});
 

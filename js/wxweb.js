@@ -1837,12 +1837,12 @@ function luckydrawCallBack(dt){
 			    userDiv+='<li style="display:none;"><span>恭喜'+luckyuser[i].mobile.substring(0,3)+'*****'+luckyuser[i].mobile.substring(8)+'获得'+luckyuser[i].worth+'元代金劵</span></li>';
 			}
 		}
-		userDiv+='</dl>';
+		userDiv+='</ul>';
 		$("#luckyUser").html(userDiv);
 //		jQuery(".loptop").slide( {mainCell:"dl",autoPage:true,effect:'topLoop',autoPlay:true,scroll:1,vis:1,easing:'swing',delayTime:500, interTime:3000, pnLoop:true});
 		//获奖名单动态显示
 		$(".list_con2").bootstrapNews({
-			newsPerPage: 12,
+			newsPerPage: 1,
 			autoplay: true,
 			pauseOnHover: true,
 			navigation: false,
@@ -3123,7 +3123,7 @@ function myChallengeCallback1(data){
  	 				var name="";
  	 				if(dt[i].name&&dt[i].worth){
  	 					//name=dt[i].name+dt[i].worth+"元";
- 	 					name= '代金券'+dt[i].worth+'元';
+ 	 					name= dt[i].worth+'元';
  	 				}
  	 				if(dt[i].level=='0'){
    	 					name="未中奖";
@@ -3274,7 +3274,7 @@ function getCodeData(){
 function sendSms(){
 	var mobile = $("#mobile").val();
 	var reqUrl = document.location.href;
-	var openId = "";
+	var openId = "",timer,num;
 	if(reqUrl.split("?").length > 0){
 		openId = reqUrl.split("?")[1];
 	}
@@ -3294,6 +3294,21 @@ function sendSms(){
 						$("#mobileErrMsg").html("距上次发送时间未超过60s,请稍后再试！");
 						countdown(data.split("#")[1]);
 					}
+					$('#smsSend').hide();
+					
+					$(".phone_code_btn_num").show();
+
+					timer = setInterval(function() {
+						--num;
+						console.log(num)
+						if(num <= 0) {
+							$('#smsSend').show();
+							$(".phone_code_btn_num").hide();
+							clearInterval(timer);
+							num = 60;
+						}
+						$(".phone_code_btn_num").text(num+'S后重新发送');
+					}, 1000);
 				}else{
 					$("#mobileErrMsg").html(data.r);
 					return ;

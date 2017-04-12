@@ -13,7 +13,7 @@ body {
 	font-family: Microsoft YaHei, Verdana, Geneva, sans-serif;
 	color: #ffffff;
 	background: url(../images/hdjs_bg.png) no-repeat;
-	margin-top: -50px;
+	margin-top: -60px;
 	background-size: cover;
 	background-color: #128e5a;
 }
@@ -40,6 +40,7 @@ li {
 
 .bg_img {
 	width: 100%;
+	margin-top: -80px;
 }
 
 .f_b {
@@ -736,7 +737,7 @@ li {
 .zc_btn {
 	width: 226px;
 	display: block;
-	margin: 10px auto;
+	margin: 0 auto 10px;
 }
 
 
@@ -838,8 +839,8 @@ li {
 
 .srk_all input {
 	width: 90%;
-	height: 126px;
-	margin: 15px auto;
+	height: 110px;
+	margin: 8px auto;
 	font-size: 40px;
 	padding-left: 150px;
 	line-height: 66px;

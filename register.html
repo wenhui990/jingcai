@@ -153,23 +153,16 @@
 				<a href="javascript:void(0);" id="smsSend" onclick="sendSms();"><input type="button" value="" class="skr04"></a>
 				<a class="phone_code_btn_num none" style="background: #ffcb57;padding: 0.5em .6em;font-size: 35px;border-radius: 10px;height: 90px;line-height: 90px;color: #fff;margin-left: 20px;vertical-align: middle;">60S后重新发送</a>
 				<br />
-
-				<span style="display:none;">短信校验码<span id="codeAlive"></span>分钟内有效，<span id="codeWait"></span>秒内未收到校验短信，可重新获取。</span>
-				<!-- <a href="javascript:void(0);" class="fx_but" id="smsSend" onclick="sendSms();" style="margin-top:15px; margin-left:-130px;"> -->
-				<span id="counta" style="display:none;color:gray;"><span id="time">0</span>秒后重发</span>
-				<!-- </a> -->
-				<br />
-
 				<input class="skr02" type="password" id="password" size="30" maxlength="18" autocomplete="off" onkeyup="this.value=this.value.replace(/[^\w!;:,._=@#$%^&*()]|_/ig,'');" onfocus="changeInput('password')" onblur="checkUserPwd();" placeholder="请输入登录密码" />
 				<br />
 				<input class="skr02" type="password" id="rePassword" size="30" maxlength="18" autocomplete="off" onkeyup="this.value=this.value.replace(/[^\w!;:,._=@#$%^&*()]|_/ig,'');" onfocus="changeInput('rePassword')" onblur="checkCfmUserPwd();" placeholder="请确认登录密码" />
 				<br />
 			</div>
-			<p class="align_c" style="height:18px">
+			<p class="align_c" style="font-size: 35px;">
 				<font id="mobileErrMsg" style="color: red"></font>
 			</p>
 			<center class="yue col_blu"><input type="radio" id="xieyi" checked="checked">
-				<font class="purple">我已阅读并同意活动规则和相关条款</font>
+				<font class="purple">我已阅读并同意<a href="active_rule.html">活动规则</a>和相关条款</font>
 			</center>
 			<p class="wid2 f18 col_gray">注意：<br/> 1.请使用真实手机号作为账户名：
 				<br/> 2.密码支持6-18个字符,数字,英文字母,区分大小写
@@ -204,24 +197,24 @@
 			loadGaScript();
 			$(function() {
 				var num = 60,timer;
-				$(document).on('click', '#smsSend', function(e) {
-					e.stopPropagation();
-					$(this).hide();
-					var _this = $(this);
-					$(".phone_code_btn_num").show();
-
-					timer = setInterval(function() {
-						--num;
-						console.log(num)
-						if(num <= 0) {
-							_this.show();
-							$(".phone_code_btn_num").hide();
-							clearInterval(timer);
-							num = 60;
-						}
-						$(".phone_code_btn_num").text(num+'S后重新发送');
-					}, 1000);
-				});
+//				$(document).on('click', '#smsSend', function(e) {
+//					e.stopPropagation();
+//					$(this).hide();
+//					var _this = $(this);
+//					$(".phone_code_btn_num").show();
+//
+//					timer = setInterval(function() {
+//						--num;
+//						console.log(num)
+//						if(num <= 0) {
+//							_this.show();
+//							$(".phone_code_btn_num").hide();
+//							clearInterval(timer);
+//							num = 60;
+//						}
+//						$(".phone_code_btn_num").text(num+'S后重新发送');
+//					}, 1000);
+//				});
 			})
 		</script>
 	</body>

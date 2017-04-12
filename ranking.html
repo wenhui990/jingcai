@@ -22,7 +22,7 @@
 			}
 			
 			.info {
-				margin: 0 20px 20px;
+				margin: 0 20px 40px;
 			}
 			
 			.info_content {}
@@ -205,7 +205,7 @@
 		</div>
 
 		<footer style="position: fixed;bottom: 0;color: #E3E3E3;text-align: center;width: 100%;">
-			<!--<p>上划显示更多</p>-->
+			<p class="shanghua none">上划显示更多</p>
 		</footer>
 
 		<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
@@ -238,7 +238,8 @@
 					return y + "-" + m + "-" + d;
 				}
 				ranking(timeF());
-
+				
+				// 排名
 				function ranking(t) {
 					$.ajax({
 						type: "get",
@@ -266,9 +267,22 @@
 					});
 
 				}
+				// 日期触发往日排名
 				$(document).on('change', '#bygoneDay', function() {
 					t = $(this).val();
 					ranking(t);
+				});
+				
+				// 滚动显示隐藏上划
+				$(document).on("scroll", function() {
+					var bodyheight = $(document.body).height();
+					var scorlltop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+					var viewheight = $(window).height();
+					if((scorlltop + viewheight) >= bodyheight) {
+						$(".shanghua").show();
+					}else{
+						$(".shanghua").hide();
+					}
 				});
 			});
 		</script>

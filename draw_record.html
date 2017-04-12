@@ -166,7 +166,7 @@
 				$(document).on("click", ".flow", function(e) {
 					e.stopPropagation();
 				});
-				$("body").click(function() {
+				$("body").on('touchend',function() {
 					$(".flow").hide();
 				})
 			});
