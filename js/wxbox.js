@@ -72,7 +72,7 @@ function tipsWindown(title,content,width_arg,height_arg,drag,time,showbg,cssName
 	
 	$("#windown-box").css({
 		left:"50%",
-		top: getScrollTop()+height+"px",
+//		top: getScrollTop()+height+"px",
 		marginTop:-((parseInt(height)+53)/2)+"px",
 		marginLeft:-((parseInt(width)+0)/2)+"px",
 		position:"absolute",

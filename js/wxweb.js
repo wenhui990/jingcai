@@ -831,13 +831,13 @@ function getShowTeams(flg){
 			$("input#initSingle").val(1);
 		}
 		//筛选弹出框的位置控制
-		var ch = $("#windown-box").css("top");
-		if(ch){
-			ch = parseInt((ch.substring(0,3))/2);
-			$("#windown-box").css({
-				top:ch+"px"
-			});
-		}
+		var ch = $("#windown-box").css("top",$(window).height()/2-150+"px !important");
+//		if(ch){
+//			ch = parseInt((ch.substring(0,3))/2);
+//			$("#windown-box").css({
+//				top:ch+"px"
+//			});
+//		}
 	}
 	return teams;
 };
@@ -1818,6 +1818,9 @@ function luckydraw(){
 	});
 };
 function luckydrawCallBack(dt){
+	if (dt['r']=='暂无抽奖活动') {
+		alert(dt['r']);
+	}
 	if(dt){
 		if(!dt["u"]){
 			window.location.href = getPath() + "/htmlwx/jc/newactivity.html";
@@ -1826,16 +1829,17 @@ function luckydrawCallBack(dt){
 		var luckyuser = dt["a"];//获奖名单,取前十个
 		var userDiv = '';
 		$("#availableCount").html(user.availableRaffleCount);//
-		userDiv+='<dl class="peolist">';
+		userDiv+='<ul class="list_con2" id="dynamicshow">';
 		for(var i=0;i<luckyuser.length;i++){
 			if(i==0){
-				userDiv+='<dd><span>恭喜'+luckyuser[i].mobile.substring(0,3)+'*****'+luckyuser[i].mobile.substring(8)+'获得'+luckyuser[i].worth+'元'+luckyuser[i].name+'</span></dd>';
+				userDiv+='<li><span>恭喜'+luckyuser[i].mobile.substring(0,3)+'*****'+luckyuser[i].mobile.substring(8)+'获得'+luckyuser[i].worth+'元代金劵</span></li>';
 			}else{
-			    userDiv+='<dd style="display:none;"><span>恭喜'+luckyuser[i].mobile.substring(0,3)+'*****'+luckyuser[i].mobile.substring(8)+'获得'+luckyuser[i].worth+'元'+luckyuser[i].name+'</span></dd>';
+			    userDiv+='<li style="display:none;"><span>恭喜'+luckyuser[i].mobile.substring(0,3)+'*****'+luckyuser[i].mobile.substring(8)+'获得'+luckyuser[i].worth+'元代金劵</span></li>';
 			}
 		}
 		userDiv+='</dl>';
 		$("#luckyUser").html(userDiv);
+//		jQuery(".loptop").slide( {mainCell:"dl",autoPage:true,effect:'topLoop',autoPlay:true,scroll:1,vis:1,easing:'swing',delayTime:500, interTime:3000, pnLoop:true});
 		//获奖名单动态显示
 		$(".list_con2").bootstrapNews({
 			newsPerPage: 12,
@@ -1845,7 +1849,7 @@ function luckydrawCallBack(dt){
 			direction: 'up',
 			newsTickerInterval: 2000,
 			onToDo: function () {
-				//console.log(this);
+				console.log(this);
 			}
 		});	
 		$("#btn_run").unbind("click").click(function(){
@@ -1875,7 +1879,7 @@ function luckyBetSumbit(){
 //				}
 				var level = {"0":"无","1":"一","2":"二","3":"三","4":"四","5":"五","6":"六"};
 				var name ={"1":"59元代金券","2":"39元代金券","3":"19元代金券","4":"9元代金券","5":"8元代金券","6":"6元代金券","0":"谢谢参与"};
-				var str = {"1":1106,"2":1210,"3":902,"4":954,"5":1006,"6":1414,"0":798};
+				var str = {"1":5480,"2":5530,"3":5942,"4":5270,"5":5686,"6":5734,"0":5838};
 				$("#run").rotate({ 
 					duration:3000, //转动时间 
 					angle: 0, //默认角度
@@ -2053,7 +2057,8 @@ function checkbetSubmit(){
 			submsg = r;
 		}
 		//showTipsWindown('', 'worn',300,200);
-		showTipsWindown('', 'worn',950,600);
+		var hh = ($(window).height()/2)-150;
+		showTipsWindown('', 'worn',950,hh);
 		$("#windown-content p[name=message]").html(submsg);
 }
 
@@ -3118,17 +3123,17 @@ function myChallengeCallback1(data){
  	 				var name="";
  	 				if(dt[i].name&&dt[i].worth){
  	 					//name=dt[i].name+dt[i].worth+"元";
- 	 					name=dt[i].worth+'等奖';
+ 	 					name= '代金券'+dt[i].worth+'元';
  	 				}
-// 	 				else{
-// 	 					name="六等奖";
-// 	 				}
+ 	 				if(dt[i].level=='0'){
+   	 					name="未中奖";
+   	 				}
  	 				td.innerHTML = name;
  	 				td = tr.insertCell(tr.cells.length);
  	 				td.width="260";
  	 				if(dt[i].name&&dt[i].worth){
  	 					if(dt[i].num){
- 	 						td.innerHTML = "兑换码："+dt[i].num+'<button class="btn erweima" style="background: #1a569d;padding: 2px 5px;" data-id="'+dt[i].name+dt[i].num+'">二维码</button>';
+ 	 						td.innerHTML = dt[i].name+dt[i].code+'<button class="btn erweima" style="background: #1a569d;padding: 2px 5px;" data-id="'+dt[i].name+dt[i].code+'">二维码</button>';
  	 					}else{
  	 						td.innerHTML = "发奖中";
  	 					}

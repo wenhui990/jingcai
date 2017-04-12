@@ -94,7 +94,6 @@
 				background-size: 1.3em;
 				background-color: #fff;
 			}
-			
 			/*#password {
 				background: url(images/password.png) no-repeat 0.5em;
 				background-size: 1.3em;
@@ -127,8 +126,6 @@
 				width: 20%;
 				line-height: 40px;
 			}
-			
-			
 		</style>
 	</head>
 
@@ -148,14 +145,13 @@
 
 		</div>
 		<div class="all_head heig_bet">
-
-			<div class="shan_line"></div>
 			<div class="srk_all">
 				<input type="text" class="skr01" id="mobile" onkeyup="this.value=this.value.replace(/\D/g,'');$('#mobileErrMsg').html('');" onafterpaste="this.value=this.value.replace(/\D/g,'')" onfocus="if(this.value=='请输入手机号码'){this.value='';}" maxlength="11" size="30" onblur="if(this.value==''){this.value='请输入手机号码';};checkMobile();" value="请输入手机号码" />
 				<br/>
 
 				<input type="text" class="skr03" id="mobileCode" onkeyup="this.value=this.value.replace(/\D/g,'');$('#mobileErrMsg').html('');" onafterpaste="this.value=this.value.replace(/\D/g,'')" onfocus="if(this.value=='请输入验证码'){this.value='';}" maxlength="6" size="30" onblur="if(this.value==''){this.value='请输入验证码';};" value="请输入验证码" />
 				<a href="javascript:void(0);" id="smsSend" onclick="sendSms();"><input type="button" value="" class="skr04"></a>
+				<a class="phone_code_btn_num none" style="background: #ffcb57;padding: 0.5em .6em;font-size: 35px;border-radius: 10px;height: 90px;line-height: 90px;color: #fff;margin-left: 20px;vertical-align: middle;">60S后重新发送</a>
 				<br />
 
 				<span style="display:none;">短信校验码<span id="codeAlive"></span>分钟内有效，<span id="codeWait"></span>秒内未收到校验短信，可重新获取。</span>
@@ -206,6 +202,27 @@
 			getCodeData();
 			initWx(window.location.href, "lead_pages.html", '猜比赛 抽红包', false);
 			loadGaScript();
+			$(function() {
+				var num = 60,timer;
+				$(document).on('click', '#smsSend', function(e) {
+					e.stopPropagation();
+					$(this).hide();
+					var _this = $(this);
+					$(".phone_code_btn_num").show();
+
+					timer = setInterval(function() {
+						--num;
+						console.log(num)
+						if(num <= 0) {
+							_this.show();
+							$(".phone_code_btn_num").hide();
+							clearInterval(timer);
+							num = 60;
+						}
+						$(".phone_code_btn_num").text(num+'S后重新发送');
+					}, 1000);
+				});
+			})
 		</script>
 	</body>
 

@@ -341,8 +341,8 @@ function tipsWindown(title,content,width_arg,height_arg,drag,time,showbg,cssName
 	}
 	$("#windown-box").css({
 		left:"50%",
-		top:getScrollTop()+height+"px",
-		marginTop:-((parseInt(height)+52)/2)+"px",
+//		top:getScrollTop()+height+"px",
+//		marginTop:-((parseInt(height)+52)/2)+"px",
 		marginLeft:-((parseInt(width)+32)/2)+"px",
 		position:"absolute",
 		zIndex: "100002"});

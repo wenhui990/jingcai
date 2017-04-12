@@ -342,11 +342,13 @@ html, body {
 
 /*****************骞歌繍澶ц浆鐩�**********************/
 .zhuanp{
-	background:url(../images/pan1.png) no-repeat center 0;
+	background:url(../images/pan11.png) no-repeat center 0;
 	/* width:595px; */
 	height:754px;
 	margin:-50px auto 20px;
 	position: relative;	
+	background-size: 630px 630px;
+    background-position: 62px 58px;
 }
 .content_hd02 {
 	width: 100%;
@@ -393,8 +395,8 @@ html, body {
 .zp-gz-block p{color:#966bd6;font-size:26px;line-height:1.8em;}
 .pointer {
 	position: absolute;
-	width: 221px;
-	height: 299px;
+	/*width: 221px;
+	height: 299px;*/
 	top: 122px;
 	left: 175px;
 	cursor: pointer;
@@ -419,7 +421,7 @@ html, body {
 }
 .roc-h{
 	position:absolute;
-	top:350px;
+	top:450px;
 	left: 60px;
 	width: 651px;
 	z-index: 201;

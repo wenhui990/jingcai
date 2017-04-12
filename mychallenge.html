@@ -157,6 +157,11 @@
 				margin-right: 7%;
 				float: left;
 			}
+			
+			/* 弹窗样式 */
+			#windown-box{
+				/*margin-top: 0 !important;*/
+			}
 		</style>
 	</head>
 
@@ -260,7 +265,12 @@
 					$(this).css("border", "4px solid #ffac10").find('i').removeClass('none');
 					$(this).siblings().css("border", "4px solid #b7b4b4").find('i').addClass('none');
 				});
+				$(document).on('click','.zc_btn',function(){
+					$("#windown-box").css("top",(($(window).height()/2)-150)+"px");
+				});
+				
 			});
+			
 		</script>
 	</body>
 
